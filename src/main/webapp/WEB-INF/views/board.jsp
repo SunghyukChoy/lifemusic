@@ -76,7 +76,7 @@
    		</tr>
         <tr>
           <td class="">3</td>
-          <td><a href="#"><img src="/images/sample/thestandin.jpg" alt="cover"></a></td>
+          <td><a href="#"><img src="/imgs/sample/thestandin.jpg" alt="cover"></a></td>
           <td><a href="#">The Stand-in</a></td>
           <td><a href="#">Caitlin Rose</a></td>
           <td>2015.01.23</td>
@@ -84,7 +84,7 @@
         </tr>
         <tr>
           <td>2</td>
-          <td><a href="#"><img src="/images/sample/loveisdead.jpg" alt="cover"></a></td>
+          <td><a href="#"><img src="/imgs/sample/loveisdead.jpg" alt="cover"></a></td>
           <td><a href="#">Love is Dead</a></td>
           <td><a href="#">CHVRCHES</a></td>
           <td>2017.11.21</td>
@@ -92,7 +92,7 @@
         </tr>
         <tr>
           <td>1</td>
-          <td><a href="#"><img src="/images/sample/the1975.jpg" alt="cover"></a></td>
+          <td><a href="#"><img src="/imgs/sample/the1975.jpg" alt="cover"></a></td>
           <td><a href="#">The 1975</a></td>
           <td><a href="#">The 1975</a></td>
           <td>2016.02.01</td>
