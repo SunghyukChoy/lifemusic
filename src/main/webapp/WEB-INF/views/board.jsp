@@ -46,6 +46,8 @@
   </style>
 </head>
 <body>
+
+<jsp:include page="navbar.jsp"/>
 <!-- 헤더 -->
   <div class="header">
     <h2>목록</h2>
