@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@
 
   </script>
   <style>
-	
+	/* ${pageName} */
     table.album_list {
       margin: 0 auto;
       border-collapse: collapse;
@@ -47,7 +48,7 @@
 </head>
 <body>
 
-<jsp:include page="navbar.jsp"/>
+<jsp:include page="../navbar.jsp"/>
 <!-- 헤더 -->
   <div class="header">
     <h2>목록</h2>
@@ -76,7 +77,17 @@
     	<tr>
     		<td class="empty_line" colspan="6">&nbsp;</td>
    		</tr>
-        <tr>
+   		<c:forEach var="album" items="${ albums }">
+ 		<tr>
+          <td class="">${ album.id }</td>
+          <td><a href="#"><img src="/imgs/sample/thestandin.jpg" alt="cover"></a></td>
+          <td><a href="#">${ album.name }</a></td>
+          <td><a href="#">Caitlin Rose</a></td>
+          <td>2015.01.23</td>
+          <td>Choi</td>
+        </tr>
+   		</c:forEach>
+        <!-- <tr>
           <td class="">3</td>
           <td><a href="#"><img src="/imgs/sample/thestandin.jpg" alt="cover"></a></td>
           <td><a href="#">The Stand-in</a></td>
@@ -99,7 +110,7 @@
           <td><a href="#">The 1975</a></td>
           <td>2016.02.01</td>
           <td>Kim</td>
-        </tr>
+        </tr> -->
       </tbody>
       <!-- 테이블 바디 끝 -->
     </table>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>navbar</title>
   <!-- css 연결 -->
-  <link rel="stylesheet" href="/css/common.css" type="text/css">
+  <link rel="stylesheet" href="/css/base.css" type="text/css">
   <link rel="stylesheet" href="/css/fullDnNav.css" type="text/css">
   <!-- jQuery -->
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
