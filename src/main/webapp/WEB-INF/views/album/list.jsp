@@ -80,14 +80,14 @@
    		<c:forEach var="album" items="${ albums }">
  		<tr>
           <td class="">${ album.id }</td>
-          <td><a href="#"><img src="/imgs/sample/thestandin.jpg" alt="cover"></a></td>
+          <td><a href="#"><img src="${album.imgURL }" alt="cover"></a></td>
           <td><a href="#">${ album.name }</a></td>
-          <td><a href="#">Caitlin Rose</a></td>
-          <td>2015.01.23</td>
-          <td>Choi</td>
+          <td><a href="#">${ album.artist }</a></td>
+          <td>${album.releasedDate }</td>
+          <td>${album.writer }</td>
         </tr>
    		</c:forEach>
-        <!-- <tr>
+        <%-- <tr>
           <td class="">3</td>
           <td><a href="#"><img src="/imgs/sample/thestandin.jpg" alt="cover"></a></td>
           <td><a href="#">The Stand-in</a></td>
@@ -110,7 +110,7 @@
           <td><a href="#">The 1975</a></td>
           <td>2016.02.01</td>
           <td>Kim</td>
-        </tr> -->
+        </tr> --%>
       </tbody>
       <!-- 테이블 바디 끝 -->
     </table>
