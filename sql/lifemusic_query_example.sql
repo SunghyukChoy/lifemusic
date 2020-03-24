@@ -7,3 +7,8 @@ WHERE c.name = 'Pop/Rock';
 SELECT * FROM song a
 JOIN genre_relation b ON a.id = b.relation_id AND b.table_name = 'song'
 JOIN genre c ON b.genre_id = c.id;
+
+-- Replace with -> Discard Changes
+-- Revert
+
+-- Reset
