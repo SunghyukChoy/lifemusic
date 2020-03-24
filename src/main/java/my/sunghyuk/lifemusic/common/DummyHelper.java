@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import my.sunghyuk.lifemusic.entity.Album;
+import my.sunghyuk.lifemusic.domain.Album;
 
 public class DummyHelper {
 	public static List<Album> GetDummyAlbums() {
