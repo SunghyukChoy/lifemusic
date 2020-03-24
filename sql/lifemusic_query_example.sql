@@ -12,3 +12,7 @@ JOIN genre c ON b.genre_id = c.id;
 -- Revert
 
 -- Reset
+
+버그를 열심히 막 고쳐
+열심히
+열심
