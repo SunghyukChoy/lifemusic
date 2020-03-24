@@ -1,4 +1,4 @@
-package my.sunghyuk.lifemusic.entity;
+package my.sunghyuk.lifemusic.domain;
 
 public class Song {
 

@@ -10,3 +10,12 @@ JOIN genre c ON b.genre_id = c.id;
 
 수정사항1
 수정사항2
+
+-- Replace with -> Discard Changes
+-- Revert
+
+-- Reset
+
+버그를 열심히 막 고쳐
+열심히
+열심
