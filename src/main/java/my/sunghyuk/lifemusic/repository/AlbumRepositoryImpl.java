@@ -4,6 +4,7 @@ import java.util.List;
 
 import my.sunghyuk.lifemusic.entity.AlbumEntity;
 
+@Repository("albumRepository")
 public class AlbumRepositoryImpl implements AlbumRepository {
 
 	@Override
