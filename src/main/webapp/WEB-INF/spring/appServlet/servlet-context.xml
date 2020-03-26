@@ -23,7 +23,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="my.sunghyuk.lifemusic" />
+	<context:component-scan base-package="my.sunghyuk.lifemusic.controller" />
 	
 	
 	

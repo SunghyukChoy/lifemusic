@@ -9,11 +9,11 @@ import my.sunghyuk.lifemusic.service.UserServiceImpl;
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	private UserService service;
 	
 	@RequestMapping(value = "/login")
 	public String tryLogin() {
-		boolean result = userService.login("hyunmui", "1234");
+		boolean result = service.login("hyunmui", "1234");
 		if (result) {
 			return "user/login";
 		} else {

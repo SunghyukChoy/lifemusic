@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import my.sunghyuk.lifemusic.entity.AlbumEntity;
 
-@Repository("albumRepository")
-public class AlbumRepositoryImpl implements AlbumRepository {
+//@Repository("albumRepository")
+public class AlbumRepositoryMyBatis implements AlbumRepository {
 
 	@Override
 	public AlbumEntity findOne(AlbumEntity entity) {

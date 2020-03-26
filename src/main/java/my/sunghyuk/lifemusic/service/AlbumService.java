@@ -10,6 +10,5 @@ public interface AlbumService {
 	
 	Album getAlbumById(int id);
 	List<Album> getAllAlbums();
-	void test(Logger logger);
 	
 }
