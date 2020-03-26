@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.sunghyuk.lifemusic.entity.mapper.AlbumMapper">
+	<resultMap id="AlbumResult" type="AlbumEntity">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="description" column="description" />
+		<result property="imgURL" column="img_url" />
+		<result property="artist" column="artist" />
+		<result property="releaseDate" column="release_date" />
+		<result property="writer" column="writer" />
+	</resultMap>
+	<select id="findAll" resultMap="AlbumResult">
+		SELECT * FROM albums
+	</select>
+</mapper>
