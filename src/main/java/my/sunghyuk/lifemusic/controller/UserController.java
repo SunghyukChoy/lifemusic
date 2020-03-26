@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import my.sunghyuk.lifemusic.service.UserService;
-import my.sunghyuk.lifemusic.service.UserServiceImpl;
 
 public class UserController {
 

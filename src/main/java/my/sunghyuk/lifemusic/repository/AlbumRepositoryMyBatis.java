@@ -2,8 +2,6 @@ package my.sunghyuk.lifemusic.repository;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import my.sunghyuk.lifemusic.entity.AlbumEntity;
 
 //@Repository("albumRepository")
