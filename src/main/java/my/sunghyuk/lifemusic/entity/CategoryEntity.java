@@ -1,6 +1,8 @@
 package my.sunghyuk.lifemusic.entity;
 
 import my.sunghyuk.lifemusic.domain.Category;
+import my.sunghyuk.lifemusic.domain.Genre;
+import my.sunghyuk.lifemusic.domain.Menu;
 
 public class CategoryEntity {
 	private long id;
@@ -73,4 +75,23 @@ public class CategoryEntity {
 		}
 	}
 	
+	public Genre buildGenre() {
+		Genre genre = new Genre();
+		genre.setId(id);
+		genre.setName(name);
+		if (parent != null)
+			genre.setParent(parent.getParent().buildGenre());
+		
+		return genre;
+	}
+	
+	public Menu buildMenu() {
+		Menu menu = new Menu();
+		menu.setId(id);
+		menu.setName(name);
+		if (parent != null)
+			menu.setParent(parent.getParent().buildMenu());
+		
+		return menu;
+	}
 }
