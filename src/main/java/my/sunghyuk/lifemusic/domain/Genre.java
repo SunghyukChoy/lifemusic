@@ -2,23 +2,24 @@ package my.sunghyuk.lifemusic.domain;
 
 public class Genre {
 
-	private int id;
+	private long id;
+	private Genre parent;
 	private String name;
-	
-	public Genre() { }
 
-	public Genre(int id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
+	}
+
+	public Genre getParent() {
+		return parent;
+	}
+
+	public void setParent(Genre parent) {
+		this.parent = parent;
 	}
 
 	public String getName() {

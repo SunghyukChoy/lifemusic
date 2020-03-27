@@ -5,9 +5,12 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="AlbumEntity" type="my.sunghyuk.lifemusic.entity.AlbumEntity"/>
+		<typeAlias alias="CategoryEntity" type="my.sunghyuk.lifemusic.entity.CategoryEntity"/>
+		<typeAlias alias="CategoryType" type="my.sunghyuk.lifemusic.entity.CategoryType"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="my/sunghyuk/lifemusic/entity/mapper/AlbumMapper.xml" />
+		<mapper resource="my/sunghyuk/lifemusic/entity/mapper/CategoryMapper.xml" />
 	</mappers>
 </configuration>
 	

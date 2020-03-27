@@ -37,6 +37,11 @@
 		<property name="mapperInterface" value="my.sunghyuk.lifemusic.entity.mapper.AlbumMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+	
+	<bean id="categoryMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="my.sunghyuk.lifemusic.entity.mapper.CategoryMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
 
 	<tx:annotation-driven transaction-manager="txManager"/>
 	
