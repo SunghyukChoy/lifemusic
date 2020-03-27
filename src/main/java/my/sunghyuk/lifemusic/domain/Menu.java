@@ -1,10 +1,10 @@
 package my.sunghyuk.lifemusic.domain;
 
-public class Genre {
-
+public class Menu {
+	
 	private long id;
-	private Genre parent;
 	private String name;
+	private Menu parent;
 
 	public long getId() {
 		return id;
@@ -14,20 +14,20 @@ public class Genre {
 		this.id = id;
 	}
 
-	public Genre getParent() {
-		return parent;
-	}
-
-	public void setParent(Genre parent) {
-		this.parent = parent;
-	}
-
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Menu getParent() {
+		return parent;
+	}
+
+	public void setParent(Menu parent) {
+		this.parent = parent;
 	}
 
 }

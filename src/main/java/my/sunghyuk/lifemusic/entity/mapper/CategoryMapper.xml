@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.sunghyuk.lifemusic.entity.mapper.CategoryMapper">
+	<resultMap id="CategoryResult" type="CategoryEntity">
+		<id property="id" column="id" />
+		<!-- <association property="parent" column="parent_id" select="find" /> -->
+		<result property="categoryType" column="type" />
+		<result property="name" column="name" />
+		<result property="description" column="description" />
+	</resultMap>
+	<select id="findCategories" parameterType="my.sunghyuk.lifemusic.domain.CategorySearch" resultMap="CategoryResult">
+		SELECT * FROM categories WHERE type = #{categoryType} AND name LIKE CONCAT(#{keywords},'%') 
+	</select>
+	<select id="find" parameterType="long" resultMap="CategoryResult">
+		SELECT * FROM categories WHERE id = #{id}
+	</select>
+</mapper>

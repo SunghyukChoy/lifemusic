@@ -11,10 +11,10 @@ public class AlbumEntity {
 	private String description;
 	private String imgURL;
 	private String artist;
-	private LocalDate releasedDate;
+	private LocalDate releaseDate;
 	private String writer;
 
-	public AlbumEntity(int id, String name, String description, String imgURL, String artist, LocalDate releasedDate,
+	public AlbumEntity(int id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
 			String writer) {
 		super();
 		this.id = id;
@@ -22,7 +22,7 @@ public class AlbumEntity {
 		this.description = description;
 		this.imgURL = imgURL;
 		this.artist = artist;
-		this.releasedDate = releasedDate;
+		this.releaseDate = releaseDate;
 		this.writer = writer;
 	}
 
@@ -67,11 +67,11 @@ public class AlbumEntity {
 	}
 
 	public LocalDate getReleasedDate() {
-		return releasedDate;
+		return releaseDate;
 	}
 
 	public void setReleasedDate(LocalDate releasedDate) {
-		this.releasedDate = releasedDate;
+		this.releaseDate = releasedDate;
 	}
 
 	public String getWriter() {
@@ -83,7 +83,7 @@ public class AlbumEntity {
 	}
 	
 	public Album buildDomain() {
-		Album album = new Album(this.id, this.name, this.description, this.imgURL, this.artist, this.releasedDate, this.writer);
+		Album album = new Album(this.id, this.name, this.description, this.imgURL, this.artist, this.releaseDate, this.writer);
 		return album;
 	}
 	
@@ -93,7 +93,7 @@ public class AlbumEntity {
 		this.description = album.getDescription();
 		this.imgURL = album.getImgURL();
 		this.artist = album.getArtist();
-		this.releasedDate = album.getReleasedDate();
+		this.releaseDate = album.getReleasedDate();
 		this.writer = album.getWriter();
 	}
 }
