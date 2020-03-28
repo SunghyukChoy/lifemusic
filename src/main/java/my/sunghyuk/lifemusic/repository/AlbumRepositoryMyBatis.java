@@ -12,12 +12,11 @@ import my.sunghyuk.lifemusic.entity.mapper.AlbumMapper;
 public class AlbumRepositoryMyBatis implements AlbumRepository {
 
 	@Autowired
-	private AlbumMapper mapper;
+	private AlbumMapper mapper;		// MyBatis 핵심 부분
 	
 	@Override
-	public AlbumEntity findOne(AlbumEntity entity) {
-		// TODO Auto-generated method stub
-		return null;
+	public AlbumEntity findOne(long id) {
+		return mapper.findById(id);
 	}
 
 	@Override

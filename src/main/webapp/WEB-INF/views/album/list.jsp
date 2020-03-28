@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="my" uri="http://lifemusic.com/tags"%>
 
@@ -16,7 +17,7 @@
 					<th>Cover</th>
 					<th>Album Title</th>
 					<th>Artist</th>
-					<th>Released Date</th>
+					<th>Release Date</th>
 					<th>Writer</th>
 				</tr>
 			</thead>
@@ -30,9 +31,9 @@
 					<tr>
 						<td class="">${ album.id }</td>
 						<td><a href="#"><img src="${album.imgURL }" alt="cover"></a></td>
-						<td><a href="#">${ album.name }</a></td>
+						<td><a href="./detail?id=${ album.id }">${ album.name }</a></td>
 						<td><a href="#">${ album.artist }</a></td>
-						<td>${ album.releasedDate }</td>
+						<td>${ album.releaseDate }</td>
 						<td>${ album.writer }</td>
 					</tr>
 				</c:forEach>
@@ -41,12 +42,14 @@
 		</table>
 		<!-- 테이블 끝 -->
 		<!-- 검색 도구 -->
-		<div class="search-tool">
-			<select name="search-filter" id="selFilterOption">
-				<option value="artist">Artist</option>
-				<option value="title">Title</option>
-			</select> <input type="text" name="search-box" placeholder="검색어 입력" id="txtKeyword">
-			<input type="submit" value="검색">
-		</div>
+		<form method="get">
+			<div class="search-tool">
+				<select name="search-filter" id="selFilterOption">
+					<option value="artist">Artist</option>
+					<option value="title">Title</option>
+				</select> <input type="text" name="keywords" placeholder="검색어 입력" id="txtKeyword">
+				<input type="submit" value="검색">
+			</div>
+		</form>
 	</jsp:attribute>
 </my:base-template>

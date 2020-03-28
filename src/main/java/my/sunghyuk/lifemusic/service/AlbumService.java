@@ -6,7 +6,7 @@ import my.sunghyuk.lifemusic.domain.Album;
 
 public interface AlbumService {
 	
-	Album getAlbumById(int id);
+	Album getAlbumById(long id);
 	List<Album> getAllAlbums();
 	
 }

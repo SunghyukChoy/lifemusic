@@ -6,7 +6,7 @@ import my.sunghyuk.lifemusic.entity.AlbumEntity;
 
 public interface AlbumRepository {
 	
-	AlbumEntity findOne(AlbumEntity entity);
+	AlbumEntity findOne(long id);
 	List<AlbumEntity> findAll();
 	
 }

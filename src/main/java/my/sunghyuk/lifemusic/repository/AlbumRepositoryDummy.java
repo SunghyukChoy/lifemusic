@@ -12,9 +12,8 @@ import my.sunghyuk.lifemusic.entity.AlbumEntity;
 public class AlbumRepositoryDummy implements AlbumRepository {
 
 	@Override
-	public AlbumEntity findOne(AlbumEntity entity) {
-		// TODO Auto-generated method stub
-		return null;
+	public AlbumEntity findOne(long id) {
+		return new AlbumEntity(2, "The 1975", "", "/imgs/sample/albumcover2.jpg", "The 1975", LocalDate.of(2014, 1, 21), "Seon");
 	}
 
 	@Override

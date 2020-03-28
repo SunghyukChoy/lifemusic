@@ -17,9 +17,9 @@ public class AlbumServiceImpl implements AlbumService {
 	private AlbumRepository repository;
 	
 	@Override
-	public Album getAlbumById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Album getAlbumById(long id) {
+		AlbumEntity entity = repository.findOne(id);
+		return entity != null ? repository.findOne(id).buildDomain() : null;
 	}
 
 	@Override

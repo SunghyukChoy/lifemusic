@@ -1,36 +1,25 @@
 package my.sunghyuk.lifemusic.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Album {
 
-	private int id;
+	private long id;
 	private String name;
 	private String description;
 	private String imgURL;
 	private String artist;
-	private LocalDate releasedDate;
+	private LocalDate releaseDate;
 	private String writer;
+	private List<Genre> genres;
+	private String genreNames;
 
-	public Album() {
-	}
-
-	public Album(int id, String name, String description, String imgURL, String artist, LocalDate releasedDate, String writer) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.imgURL = imgURL;
-		this.artist = artist;
-		this.releasedDate = releasedDate;
-		this.writer = writer;
-	}
-
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -66,12 +55,12 @@ public class Album {
 		this.artist = artist;
 	}
 
-	public LocalDate getReleasedDate() {
-		return releasedDate;
+	public LocalDate getReleaseDate() {
+		return releaseDate;
 	}
 
-	public void setReleasedDate(LocalDate releasedDate) {
-		this.releasedDate = releasedDate;
+	public void setReleaseDate(LocalDate releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 
 	public String getWriter() {
@@ -81,4 +70,26 @@ public class Album {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
+
+	public List<Genre> getGenres() {
+		return genres;
+	}
+
+	public void setGenres(List<Genre> genres) {
+		this.genres = genres;
+	}
+
+	public String getGenreNames() {
+		if (genreNames == null) {
+			genreNames = "";
+			
+			for (int i = 0; i < genres.size(); i++) {
+				Genre genre = genres.get(i);
+				genreNames += genre.getName() + (i == genres.size() ? "" : ", ");
+			}
+		}
+		
+		return genreNames;
+	}
+
 }

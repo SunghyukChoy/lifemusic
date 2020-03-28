@@ -13,4 +13,7 @@
 	<select id="findAll" resultMap="AlbumResult">
 		SELECT * FROM albums
 	</select>
+	<select id="findById" parameterType="long" resultMap="AlbumResult">
+		SELECT * FROM albums WHERE id = #{ id }
+	</select>
 </mapper>

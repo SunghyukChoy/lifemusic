@@ -6,7 +6,7 @@ import my.sunghyuk.lifemusic.domain.Album;
 
 public class AlbumEntity {
 	
-	private int id;
+	private long id;
 	private String name;
 	private String description;
 	private String imgURL;
@@ -14,7 +14,7 @@ public class AlbumEntity {
 	private LocalDate releaseDate;
 	private String writer;
 
-	public AlbumEntity(int id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
+	public AlbumEntity(long id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
 			String writer) {
 		super();
 		this.id = id;
@@ -26,11 +26,11 @@ public class AlbumEntity {
 		this.writer = writer;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -83,7 +83,14 @@ public class AlbumEntity {
 	}
 	
 	public Album buildDomain() {
-		Album album = new Album(this.id, this.name, this.description, this.imgURL, this.artist, this.releaseDate, this.writer);
+		Album album = new Album();
+		album.setId(id);
+		album.setName(name);
+		album.setDescription(description);
+		album.setImgURL(imgURL);
+		album.setArtist(artist);
+		album.setReleaseDate(releaseDate);
+		album.setWriter(writer);
 		return album;
 	}
 	
@@ -93,7 +100,7 @@ public class AlbumEntity {
 		this.description = album.getDescription();
 		this.imgURL = album.getImgURL();
 		this.artist = album.getArtist();
-		this.releaseDate = album.getReleasedDate();
+		this.releaseDate = album.getReleaseDate();
 		this.writer = album.getWriter();
 	}
 }
