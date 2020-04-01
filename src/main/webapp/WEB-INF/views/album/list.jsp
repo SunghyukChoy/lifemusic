@@ -5,7 +5,6 @@
 
 <my:base-template title="앨범 정보">
 	<jsp:attribute name="head_area">
-		<script></script>
 	</jsp:attribute>
 	<jsp:attribute name="container_area">
 		<!-- 테이블 -->

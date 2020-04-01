@@ -10,63 +10,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LIFE MUSIC - ${ title }</title>
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
 <!-- CSS -->
 <link href="/css/base.css" type="text/css" rel="stylesheet" />
-<link href="/css/fullDnNav.css" type="text/css" rel="stylesheet" />
 
 <!-- js plugins -->
 <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
-<script type="text/javascript" src="/js/fullDn-1.js"></script>
 
 <jsp:invoke fragment="head_area"/>
 </head>
 <body>
 	<!-- 헤더 -->
 	<header>
-		<div id="headerWrap">
-			<div id="head">
-				<!-- 내비게이션 -->
-				<ul id="gnb">
-					<li class="nav1"><a href="#">메뉴1</a>
-						<ul class="sub">
-							<li><a href="#">메뉴1-1</a></li>
-							<li><a href="#">메뉴1-2</a></li>
-							<li><a href="#">메뉴1-3</a></li>
-							<li><a href="#">메뉴1-4</a></li>
-						</ul></li>
-					<li class="nav2"><a href="#">메뉴2</a>
-						<ul class="sub">
-							<li><a href="#">메뉴2-1</a></li>
-							<li><a href="#">메뉴2-2</a></li>
-							<li><a href="#">메뉴2-3</a></li>
-							<li><a href="#">메뉴2-4</a></li>
-						</ul></li>
-					<li class="nav3"><a href="#">메뉴3</a>
-						<ul class="sub">
-							<li><a href="#">메뉴3-1</a></li>
-							<li><a href="#">메뉴3-2</a></li>
-							<li><a href="#">메뉴3-3</a></li>
-							<li><a href="#">메뉴3-4</a></li>
-						</ul></li>
-					<li class="nav4"><a href="#">메뉴4</a>
-						<ul class="sub">
-							<li><a href="#">메뉴4-1</a></li>
-							<li><a href="#">메뉴4-2</a></li>
-							<li><a href="#">메뉴4-3</a></li>
-							<li><a href="#">메뉴4-4</a></li>
-						</ul></li>
-					<li class="nav5"><a href="#">메뉴5</a>
-						<ul class="sub">
-							<li><a href="#">메뉴5-1</a></li>
-							<li><a href="#">메뉴5-2</a></li>
-							<li><a href="#">메뉴5-3</a></li>
-							<li><a href="#">메뉴5-4</a></li>
-						</ul></li>
-				</ul>
-			</div>
-		</div>
+		
 	</header>
 	<!-- 헤더 끝 -->
 
