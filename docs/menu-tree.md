@@ -26,7 +26,12 @@
   - Record (/review/records)
   - Artist (/review/artists)
   - Song (/review/songs)
+- Other Top Menu
+  - Login (/login)
+  - Logout (/logout)
+  - My Profile (/my/profile)
+  - My Reviews (/my/reviews)
 - About (/about)
-  - My Info (/about/me)
+  - Developer Info (/about/me)
   - Contact Us (/about/contact-us)
   
