@@ -9,6 +9,7 @@
 		<result property="artist" column="artist" />
 		<result property="releaseDate" column="release_date" />
 		<result property="writer" column="writer" />
+		<result property="likeCount" column="like_count" />
 		<result property="createdDateTime" column="created_datetime" />
 	</resultMap>
 	<select id="findAll" resultMap="AlbumResult">

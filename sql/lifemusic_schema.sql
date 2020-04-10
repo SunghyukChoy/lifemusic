@@ -9,6 +9,7 @@ CREATE TABLE albums (
 	artist varchar(30) not null,
 	release_date timestamp null,
 	writer varchar(20) not null,
+    like_count INT UNSIGNED NOT NULL DEFAULT 0,
 	created_datetime timestamp not null default now(),
 	updated_datetime timestamp not null default now(),
 	primary key(id)

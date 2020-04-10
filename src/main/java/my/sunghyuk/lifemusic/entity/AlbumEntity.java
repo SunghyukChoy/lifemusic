@@ -14,7 +14,9 @@ public class AlbumEntity {
 	private String artist;
 	private LocalDate releaseDate;
 	private String writer;
+	private int likeCount;
 	private LocalDateTime createdDateTime;
+	
 
 	public AlbumEntity(long id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
 			String writer) {
@@ -82,8 +84,16 @@ public class AlbumEntity {
 
 	public void setWriter(String writer) {
 		this.writer = writer;
-	}
+	}	
 	
+	public int getLikeCount() {
+		return likeCount;
+	}
+
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
+	}
+
 	public LocalDateTime getCreatedDateTime() {
 		return createdDateTime;
 	}
@@ -102,6 +112,7 @@ public class AlbumEntity {
 		album.setReleaseDate(releaseDate);
 		album.setWriter(writer);
 		album.setCreatedDateTime(createdDateTime);
+		album.setLikeCount(likeCount);
 		return album;
 	}
 	
@@ -114,5 +125,6 @@ public class AlbumEntity {
 		this.releaseDate = album.getReleaseDate();
 		this.writer = album.getWriter();
 		this.createdDateTime = album.getCreatedDateTime();
+		this.likeCount = album.getLikeCount();
 	}
 }

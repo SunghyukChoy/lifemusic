@@ -86,8 +86,7 @@
               ${ album.createdDateTime }
             </td>
             <td>
-            	<!-- Like 숫자 카운팅 필요 -->
-            	0
+            	${ album.likeCount }
             </td>
           </tr>
         </c:forEach>

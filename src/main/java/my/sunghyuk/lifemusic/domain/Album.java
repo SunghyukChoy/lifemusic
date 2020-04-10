@@ -13,9 +13,10 @@ public class Album {
 	private String artist;
 	private LocalDate releaseDate;
 	private String writer;
+	private int likeCount;
 	private List<Genre> genres;
 	private String genreNames;
-	private LocalDateTime createdDateTime;
+	private LocalDateTime createdDateTime;	
 
 	public long getId() {
 		return id;
@@ -71,6 +72,14 @@ public class Album {
 
 	public void setWriter(String writer) {
 		this.writer = writer;
+	}	
+
+	public int getLikeCount() {
+		return likeCount;
+	}
+
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
 	}
 
 	public List<Genre> getGenres() {
@@ -100,6 +109,6 @@ public class Album {
 
 	public void setCreatedDateTime(LocalDateTime createdDateTime) {
 		this.createdDateTime = createdDateTime;
-	}
+	}	
 
 }
