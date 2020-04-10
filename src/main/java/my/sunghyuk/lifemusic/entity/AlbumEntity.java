@@ -1,6 +1,7 @@
 package my.sunghyuk.lifemusic.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import my.sunghyuk.lifemusic.domain.Album;
 
@@ -13,6 +14,7 @@ public class AlbumEntity {
 	private String artist;
 	private LocalDate releaseDate;
 	private String writer;
+	private LocalDateTime createdDateTime;
 
 	public AlbumEntity(long id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
 			String writer) {
@@ -82,6 +84,14 @@ public class AlbumEntity {
 		this.writer = writer;
 	}
 	
+	public LocalDateTime getCreatedDateTime() {
+		return createdDateTime;
+	}
+
+	public void setCreatedDateTime(LocalDateTime createdDateTime) {
+		this.createdDateTime = createdDateTime;
+	}
+
 	public Album buildDomain() {
 		Album album = new Album();
 		album.setId(id);
@@ -91,6 +101,7 @@ public class AlbumEntity {
 		album.setArtist(artist);
 		album.setReleaseDate(releaseDate);
 		album.setWriter(writer);
+		album.setCreatedDateTime(createdDateTime);
 		return album;
 	}
 	
@@ -102,5 +113,6 @@ public class AlbumEntity {
 		this.artist = album.getArtist();
 		this.releaseDate = album.getReleaseDate();
 		this.writer = album.getWriter();
+		this.createdDateTime = album.getCreatedDateTime();
 	}
 }

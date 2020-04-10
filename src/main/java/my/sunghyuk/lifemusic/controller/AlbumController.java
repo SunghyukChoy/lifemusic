@@ -1,7 +1,5 @@
 package my.sunghyuk.lifemusic.controller;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,26 +23,26 @@ public class AlbumController {
 	private static final Logger logger = LoggerFactory.getLogger(AlbumController.class);
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public ModelAndView list(@RequestParam(value = "search-filter", required = false) String searchFilter, 
+	public ModelAndView list(@RequestParam(value = "search-filter", required = false) String searchFilter,
 			@RequestParam(required = false) String keywords) {
 		ModelAndView mv = new ModelAndView();
 
 		mv.setViewName("album/list");
-		// TODO: 주석 해제해야됨
-		//mv.addObject("albums", service.getAllAlbums());
+		 mv.addObject("albums", service.getAllAlbums());
 
 		return mv;
 	}
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public ModelAndView detail(@RequestParam(value="id") long id) {
-		// Album album = service.getAlbumById(id);
-		
-		// if (album == null) throw new ResourceNotFoundException();
-		
+	public ModelAndView detail(@RequestParam(value = "id") long id) {
+		Album album = service.getAlbumById(id);
+
+		if (album == null)
+			throw new ResourceNotFoundException();
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("album/detail");
-		// mv.addObject("album", album);
+		mv.addObject("album", album);
 
 		return mv;
 	}

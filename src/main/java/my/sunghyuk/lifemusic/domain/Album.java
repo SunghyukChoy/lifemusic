@@ -1,6 +1,7 @@
 package my.sunghyuk.lifemusic.domain;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Album {
@@ -14,6 +15,7 @@ public class Album {
 	private String writer;
 	private List<Genre> genres;
 	private String genreNames;
+	private LocalDateTime createdDateTime;
 
 	public long getId() {
 		return id;
@@ -90,6 +92,14 @@ public class Album {
 		}
 		
 		return genreNames;
+	}
+
+	public LocalDateTime getCreatedDateTime() {
+		return createdDateTime;
+	}
+
+	public void setCreatedDateTime(LocalDateTime createdDateTime) {
+		this.createdDateTime = createdDateTime;
 	}
 
 }
