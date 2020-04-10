@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+
+/* START Common style ------------------------- */
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 11px;
+}
+
+body {
+  margin: 0 auto !important;
+  padding: 0;
+}
+
+a {
+  /* color: #2d6098; */
+}
+
+header {
+  /* border-bottom: 2px solid #999; */
+  z-index: 999;
+  background-color: #fff;
+}
+
+header div.top-area {
+  height: 15px;
+}
+
+header #mobile-menu-button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+header .user-buttons {
+  position: absolute;
+  right: 10px;
+  margin-top: 5px;
+}
+
+main {
+  margin-top: 1rem;
+}
+
+footer {
+  color: #fff;
+  position: relative;
+  z-index: 998;
+}
+
+footer > div {
+  background-color: #50575f;
+  padding: 2rem 15px 2rem 15px;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0 auto;
+  color: #fff;
+}
+
+.nav-breadcrumb {
+  line-height: 1;
+}
+
+main .breadcrumb a {
+  font-size: 0.9rem;
+}
+
+table thead th,
+table tbody th {
+  text-align: center;
+}
+
+a.mailto {
+  color: #eee;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.record-info-item {
+  border-left: 0;
+}
+
+.carousel-indicators li {
+  height: 5px;
+}
+
+.bd-placeholder-img-lg {
+  font-size: calc(1.475rem + 2.7vw) !important;
+}
+
+#main-carousel {
+  margin-bottom: 2rem;
+}
+
+#main-carousel .carousel-item {
+  height: 300px;
+}
+
+#main-carousel .carousel-item svg {
+  height: 300px;
+}
+
+/* END Common style --------------------------- */
+
+/* START for Screen Size ---------------------- */
+
+@media (min-width: 768px) {
+  li.nav-item .dropdown-menu {
+    border: 0px;
+    margin: 0px auto;
+    border-radius: 0%;
+  }
+
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+
+  #record-info img.record-jacket {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .record-info-item {
+    border-left: 5px double #dee2e6 !important;
+  }
+
+  img.bd-placeholder-img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img.bd-placeholder-img {
+  width: 130px;
+  height: 130px;
+}
+
+img#logo-header {
+  width: auto !important;
+  height: 65px;
+}
+
+/* END for Screen Size ----------------------- */
+
+/* START #menu-area -------------------------- */
+#menu-area {
+  background-color: #50575f;
+}
+
+#menu-area li.nav-item .dropdown-menu {
+  background-color: #69727c;
+}
+
+#menu-area .nav > .nav-item a {
+  color: #fff;
+  font-weight: bold;
+  outline-width: 0;
+}
+
+#menu-area a.nav-link.active {
+  color: #41b5ea;
+}
+
+#menu-area .nav > .nav-item a.dropdown-item {
+  font-weight: normal;
+}
+
+#menu-area .nav > .nav-item a.dropdown-item.active {
+  color: #41b5ea;
+  background-color: #69727c;
+}
+
+#menu-area .nav > .nav-item a.dropdown-item:hover {
+  background-color: #50575f;
+}
+
+/* END #menu-area ----------------------------- */
+
+/* START #record-info ------------------------- */
+
+#record-info {
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+}
+
+#record-info a.nav-link.active {
+  color: #fff;
+  background-color: #2d6098;
+}
+
+#record-info div.record-info {
+  margin-bottom: 1rem;
+}
+
+#record-info img.record-jacket {
+  width: 100%;
+}
+
+div#track table {
+  margin-bottom: 0; 
+}
+
+#record-info .tab-content {
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+#record-info .review-main {
+  padding: 1rem;
+}
+
+.record-info label {
+  color: #41b5ea;
+  font-weight: bold;
+}
+
+.record-info .record-info-item {
+  font-size: 1.3rem;
+}
+
+/* END #record-info --------------------------- */
+
+/* START index page --------------------------- */
+
+.review-post {
+  padding-bottom: 0rem;
+}
+
+.record-info p {
+  margin-bottom: 0;
+}
+
+.review-divider {
+  margin: 2rem;
+}
+
+.review-divider .divider-left {
+  border: 1px solid;
+  border-image: linear-gradient(to left, #dee2e6, #fff);
+  border-image-slice: 1;
+}
+
+.review-divider .divider-right {
+  border: 1px solid;
+  border-image: linear-gradient(to right, #dee2e6, #fff);
+  border-image-slice: 1;
+}
+
+.review-content-cut {
+  font-size: 1.2rem;
+}
+
+.review-content {
+  font-size: 1.2rem;
+}
+
+.review-content p {
+  text-indent: 1ch;
+}
+
+.review-post-meta {
+  font-size: 1rem;
+}
+
+.review-updown p {
+  font-size: 0.6rem;
+}
+
+table.popular-rank tbody h4 {
+  font-size: 1.2rem; /* song */
+}
+
+table.popular-rank tbody h5 {
+  font-size: 1rem; /* artist */
+}
+
+table.popular-rank tbody th,
+table.popular-rank tbody td a {
+  color: #333;
+  text-decoration: none;
+}
+
+table.popular-rank tbody td a:hover {
+  color: #999 !important;
+}
+
+table.popular-rank tbody th[scope="row"] {
+  vertical-align: middle;
+}
+
+table.popular-rank tbody tr:first-child th[scope="row"],
+table.popular-rank tbody tr:first-child td a {
+  font-weight: bold;
+  color: #c71616;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+}
+
+/* END index page ----------------------------- */
+
+/* START list page ---------------------------- */
+
+.board table tbody th,
+.board table tbody td {
+  font-size: 0.8rem;
+}
+
+/* END list page ------------------------------ */
