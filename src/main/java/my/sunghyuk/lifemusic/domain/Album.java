@@ -17,6 +17,7 @@ public class Album {
 	private List<Genre> genres;
 	private String genreNames;
 	private LocalDateTime createdDateTime;	
+	private int views;
 
 	public long getId() {
 		return id;
@@ -109,6 +110,15 @@ public class Album {
 
 	public void setCreatedDateTime(LocalDateTime createdDateTime) {
 		this.createdDateTime = createdDateTime;
-	}	
+	}
+
+	public int getViews() {
+		return views;
+	}
+
+	public void setViews(int views) {
+		this.views = views;
+	}
+	
 
 }

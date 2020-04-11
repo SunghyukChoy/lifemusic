@@ -54,6 +54,7 @@
             <th class="d-none d-md-table-cell">Release</th>
             <th>Writer</th>
             <th class="d-none d-md-table-cell">Created</th>
+            <th>Views</th>
             <th>Like</th>
           </tr>
         </thead>
@@ -84,6 +85,9 @@
             </td>
             <td class="d-none d-md-table-cell">
               ${ album.createdDateTime }
+            </td>
+            <td>
+              ${ album.views }
             </td>
             <td>
             	${ album.likeCount }
