@@ -49,7 +49,7 @@
               <a href="/record/detail.html" class="stretched-link">Show more..</a>
             </div>
             <div class="col-auto">
-              <img class="bd-placeholder-img" src="/images/sample/gfriend_time-for-us.jpg" alt="여자친구 - Time for us" />
+              <img class="bd-placeholder-img" src="/images/sample/albumcover14.jpg" alt="여자친구 - Time for us" />
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
               <a href="/record/detail.html" class="stretched-link">Show more..</a>
             </div>
             <div class="col-auto">
-              <img class="bd-placeholder-img" src="/images/sample/the1975_the-1975.png"
+              <img class="bd-placeholder-img" src="/images/sample/albumcover2.jpg"
                 alt="The 1975 - The 1975 (album)" />
             </div>
           </div>

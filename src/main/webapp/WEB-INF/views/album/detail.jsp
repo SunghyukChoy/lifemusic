@@ -39,8 +39,8 @@
     <div id="record-info">
       <div class="record-info d-flex row">
         <div class="col-auto">
-          <img class="record-jacket rounded img-thumbnail" src="/images/sample/gfriend_time-for-us.jpg"
-            alt="여자친구 - Labyrinth" />
+          <img class="record-jacket rounded img-thumbnail" src="/images/sample/albumcover14.jpg"
+            alt="여자친구 - Time for us" />
         </div>
         <div class="col-12 col-md-7">
           <ul class="list-unstyled">

@@ -18,6 +18,7 @@ public class Album {
 	private String genreNames;
 	private LocalDateTime createdDateTime;	
 	private int views;
+	private double rate;
 
 	public long getId() {
 		return id;
@@ -119,6 +120,12 @@ public class Album {
 	public void setViews(int views) {
 		this.views = views;
 	}
-	
 
+	public double getRate() {
+		return rate;
+	}
+
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
 }

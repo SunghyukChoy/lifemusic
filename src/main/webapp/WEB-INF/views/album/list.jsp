@@ -64,11 +64,12 @@
             <th class="text-center">${ album.id }</th>
             <td class="text-center">
             <!-- TODO: 평가(별) 로직 추가 필요 -->
+             <!--  <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i> -->
+              ${ album.rate }
             </td>
             <td>
               <a href="/album/detail?id=${ album.id }">${ album.name }</a>

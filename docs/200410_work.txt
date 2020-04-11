@@ -2,6 +2,7 @@
 1) 프론트 엔드 디자인 적용
 	- index.html에서 적용된 스타일시트, 라이브러리, 이미지 파일들 확인하여 작업공간으로 복사
 	- index.html, css, js, lib(bootstap, bootstrap-select, font-awesome, jquery, popper.js)
+	- servlet-context.xml에서 resource 태그 추가
 2) database connection 정보 수정
 	- environment.properties에서 db url 수정 (서버포트 번호, 서버타임), db password 수정
 3) Album 도메인, 엔티티에 createdDateTime 필드 추가

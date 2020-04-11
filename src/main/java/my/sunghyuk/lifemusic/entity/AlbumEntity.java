@@ -17,6 +17,7 @@ public class AlbumEntity {
 	private int likeCount;
 	private LocalDateTime createdDateTime;
 	private int views;
+	private double rate;
 	
 
 	public AlbumEntity(long id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
@@ -109,6 +110,14 @@ public class AlbumEntity {
 
 	public void setViews(int views) {
 		this.views = views;
+	}	
+
+	public double getRate() {
+		return rate;
+	}
+
+	public void setRate(double rate) {
+		this.rate = rate;
 	}
 
 	public Album buildDomain() {
@@ -123,6 +132,7 @@ public class AlbumEntity {
 		album.setCreatedDateTime(createdDateTime);
 		album.setLikeCount(likeCount);
 		album.setViews(views);
+		album.setRate(rate);
 		return album;
 	}
 	
@@ -137,5 +147,6 @@ public class AlbumEntity {
 		this.createdDateTime = album.getCreatedDateTime();
 		this.likeCount = album.getLikeCount();
 		this.views = album.getViews();
+		this.rate = album.getRate();
 	}
 }
