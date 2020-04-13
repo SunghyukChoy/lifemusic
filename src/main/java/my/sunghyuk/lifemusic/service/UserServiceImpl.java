@@ -10,4 +10,10 @@ public class UserServiceImpl implements UserService {
 		return true;
 	}
 
+	@Override
+	public boolean register() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 }

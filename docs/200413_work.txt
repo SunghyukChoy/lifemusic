@@ -1,0 +1,5 @@
+1) 로그인 페이지 퍼블리싱
+	- views/user/login.jsp 생성
+	- base.tag에서 하이퍼링크 수정 (login.html -> login)
+	- UserController.java에서 매핑
+	
