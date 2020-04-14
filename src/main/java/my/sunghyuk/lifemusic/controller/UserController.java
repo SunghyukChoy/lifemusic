@@ -25,9 +25,9 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	@RequestMapping(value = "/register2", method = RequestMethod.GET)
 	public String register() {
-		return "user/register";
+		return "user/register2";
 	}
 	
 }

@@ -70,7 +70,7 @@
         <a href="/"><img id="logo-header" src="/images/logo/logo-header.png" alt="LIFEMUSIC" /></a>
       </div>
       <div class="user-buttons text-uppercase">
-        <p><a href="/user/login">로그인</a> | <a href="/user/register.html">회원가입</a></p>
+        <p><a href="/user/login">로그인</a> | <a href="/user/register2">회원가입</a></p>
       </div>
     </div>
     <!-- if not mobile, add class 'show' -->
