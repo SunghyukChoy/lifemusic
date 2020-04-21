@@ -1,6 +1,10 @@
 
-# Created by https://www.gitignore.io/api/java,maven,windows,eclipse,java-web
-# Edit at https://www.gitignore.io/?templates=java,maven,windows,eclipse,java-web
+# Created by https://www.gitignore.io/api/java,maven,windows,dbeaver,eclipse,java-web
+# Edit at https://www.gitignore.io/?templates=java,maven,windows,dbeaver,eclipse,java-web
+
+### DBeaver ###
+# ide config file
+.dbeaver-data-sources*.xml
 
 ### Eclipse ###
 .metadata
@@ -138,12 +142,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# End of https://www.gitignore.io/api/java,maven,windows,eclipse,java-web
+# End of https://www.gitignore.io/api/java,maven,windows,dbeaver,eclipse,java-web

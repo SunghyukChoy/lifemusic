@@ -1,0 +1,48 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql5-17188913f13-3d3c472639689533": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "MySQL - localhost",
+			"save-password": true,
+			"read-only": false,
+			"virtual-model-id": "mysql5-171364191fe-1c323a770b6e7aa7",
+			"configuration": {
+				"host": "localhost",
+				"port": "32769",
+				"database": "lifemusic",
+				"url": "jdbc:mysql://localhost:32769/lifemusic",
+				"home": "MySQL Binaries",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"allowSlaveDownConnections": "TRUE",
+					"allowPublicKeyRetrieval": "true",
+					"useSSL": "false"
+				},
+				"auth-model": "native",
+				"handlers": {}
+			},
+			"filters": [
+				{
+					"type": "org.jkiss.dbeaver.ext.mysql.model.MySQLCatalog",
+					"enabled": true,
+					"include": [
+						"lifemusic"
+					]
+				}
+			]
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}

@@ -419,5 +419,6 @@
           </div><!-- /.review-main -->
         </div>
       </div>  
-	</jsp:attribute>
+	</div>
+  </jsp:attribute>
 </my:base-template>
