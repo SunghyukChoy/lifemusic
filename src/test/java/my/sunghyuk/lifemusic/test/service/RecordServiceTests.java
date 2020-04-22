@@ -6,9 +6,9 @@ import org.junit.Test;
 
 public class RecordServiceTests {
 
-	@Test
-	public void get_record_by_id_test() {
-		assertTrue(true);
-	}
-	
+    @Test
+    public void get_record_by_id_test() {
+        assertTrue(true);
+    }
+
 }
