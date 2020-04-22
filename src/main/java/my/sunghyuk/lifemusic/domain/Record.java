@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Album {
+public class Record {
 
 	private long id;
 	private String name;

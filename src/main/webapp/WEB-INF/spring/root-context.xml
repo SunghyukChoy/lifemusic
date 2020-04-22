@@ -35,8 +35,8 @@
 	</bean>
 	
 	<!-- MyBatis Mappers -->
-	<bean id="albumMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="my.sunghyuk.lifemusic.entity.mapper.AlbumMapper" />
+	<bean id="recordMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="my.sunghyuk.lifemusic.entity.mapper.RecordMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	

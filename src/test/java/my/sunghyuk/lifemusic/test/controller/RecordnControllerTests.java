@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class AlbumnControllerTests {
+public class RecordnControllerTests {
 
 	@Test
 	public void get_list_test() {

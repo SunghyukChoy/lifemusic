@@ -5,7 +5,7 @@ public class Song {
 	private int id;
 	private String name;
 	private int no;
-	private int album_id;
+	private int record_id;
 
 	public int getId() {
 		return id;
@@ -31,12 +31,12 @@ public class Song {
 		this.no = no;
 	}
 
-	public int getAlbum_id() {
-		return album_id;
+	public int getRecord_id() {
+		return record_id;
 	}
 
-	public void setAlbum_id(int album_id) {
-		this.album_id = album_id;
+	public void setRecord_id(int record_id) {
+		this.record_id = record_id;
 	}
 
 }

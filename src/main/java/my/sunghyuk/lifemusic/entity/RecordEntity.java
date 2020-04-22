@@ -3,9 +3,9 @@ package my.sunghyuk.lifemusic.entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import my.sunghyuk.lifemusic.domain.Album;
+import my.sunghyuk.lifemusic.domain.Record;
 
-public class AlbumEntity {
+public class RecordEntity {
 	
 	private long id;
 	private String name;
@@ -20,7 +20,7 @@ public class AlbumEntity {
 	private double rate;
 	
 
-	public AlbumEntity(long id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
+	public RecordEntity(long id, String name, String description, String imgURL, String artist, LocalDate releaseDate,
 			String writer) {
 		super();
 		this.id = id;
@@ -120,33 +120,33 @@ public class AlbumEntity {
 		this.rate = rate;
 	}
 
-	public Album buildDomain() {
-		Album album = new Album();
-		album.setId(id);
-		album.setName(name);
-		album.setDescription(description);
-		album.setImgURL(imgURL);
-		album.setArtist(artist);
-		album.setReleaseDate(releaseDate);
-		album.setWriter(writer);
-		album.setCreatedDateTime(createdDateTime);
-		album.setLikeCount(likeCount);
-		album.setViews(views);
-		album.setRate(rate);
-		return album;
+	public Record buildDomain() {
+		Record record = new Record();
+		record.setId(id);
+		record.setName(name);
+		record.setDescription(description);
+		record.setImgURL(imgURL);
+		record.setArtist(artist);
+		record.setReleaseDate(releaseDate);
+		record.setWriter(writer);
+		record.setCreatedDateTime(createdDateTime);
+		record.setLikeCount(likeCount);
+		record.setViews(views);
+		record.setRate(rate);
+		return record;
 	}
 	
-	public void buildEntity(Album album) {
-		this.id = album.getId();
-		this.name = album.getName();
-		this.description = album.getDescription();
-		this.imgURL = album.getImgURL();
-		this.artist = album.getArtist();
-		this.releaseDate = album.getReleaseDate();
-		this.writer = album.getWriter();
-		this.createdDateTime = album.getCreatedDateTime();
-		this.likeCount = album.getLikeCount();
-		this.views = album.getViews();
-		this.rate = album.getRate();
+	public void buildEntity(Record record) {
+		this.id = record.getId();
+		this.name = record.getName();
+		this.description = record.getDescription();
+		this.imgURL = record.getImgURL();
+		this.artist = record.getArtist();
+		this.releaseDate = record.getReleaseDate();
+		this.writer = record.getWriter();
+		this.createdDateTime = record.getCreatedDateTime();
+		this.likeCount = record.getLikeCount();
+		this.views = record.getViews();
+		this.rate = record.getRate();
 	}
 }

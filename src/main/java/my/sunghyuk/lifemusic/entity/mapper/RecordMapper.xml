@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="my.sunghyuk.lifemusic.entity.mapper.AlbumMapper">
-	<resultMap id="AlbumResult" type="AlbumEntity">
+<mapper namespace="my.sunghyuk.lifemusic.entity.mapper.RecordMapper">
+	<resultMap id="RecordResult" type="RecordEntity">
 		<id property="id" column="id" />
 		<result property="name" column="name" />
 		<result property="description" column="description" />
@@ -14,10 +14,10 @@
 		<result property="views" column="views" />
 		<result property="rate" column="rate" />
 	</resultMap>
-	<select id="findAll" resultMap="AlbumResult">
-		SELECT * FROM albums
+	<select id="findAll" resultMap="RecordResult">
+		SELECT * FROM records
 	</select>
-	<select id="findById" parameterType="long" resultMap="AlbumResult">
-		SELECT * FROM albums WHERE id = #{ id }
+	<select id="findById" parameterType="long" resultMap="RecordResult">
+		SELECT * FROM records WHERE id = #{ id }
 	</select>
 </mapper>

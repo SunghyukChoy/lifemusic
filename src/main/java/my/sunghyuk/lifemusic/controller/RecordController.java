@@ -10,39 +10,39 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import my.sunghyuk.lifemusic.common.exception.ResourceNotFoundException;
-import my.sunghyuk.lifemusic.domain.Album;
-import my.sunghyuk.lifemusic.service.AlbumService;
+import my.sunghyuk.lifemusic.domain.Record;
+import my.sunghyuk.lifemusic.service.RecordService;
 
 @Controller
-@RequestMapping(value = "/album")
-public class AlbumController {
+@RequestMapping(value = "/record")
+public class RecordController {
 
 	@Autowired
-	private AlbumService service;
+	private RecordService service;
 
-	private static final Logger logger = LoggerFactory.getLogger(AlbumController.class);
+	private static final Logger logger = LoggerFactory.getLogger(RecordController.class);
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView list(@RequestParam(value = "search-filter", required = false) String searchFilter,
 			@RequestParam(required = false) String keywords) {
 		ModelAndView mv = new ModelAndView();
 
-		mv.setViewName("album/list");
-		 mv.addObject("albums", service.getAllAlbums());
+		mv.setViewName("record/list");
+		 mv.addObject("records", service.getAllRecords());
 
 		return mv;
 	}
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public ModelAndView detail(@RequestParam(value = "id") long id) {
-		Album album = service.getAlbumById(id);
+		Record record = service.getRecordById(id);
 
-		if (album == null)
+		if (record == null)
 			throw new ResourceNotFoundException();
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("album/detail");
-		mv.addObject("album", album);
+		mv.setViewName("record/detail");
+		mv.addObject("record", record);
 
 		return mv;
 	}

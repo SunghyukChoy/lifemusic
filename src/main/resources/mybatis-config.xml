@@ -4,12 +4,12 @@
          "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="AlbumEntity" type="my.sunghyuk.lifemusic.entity.AlbumEntity"/>
+		<typeAlias alias="RecordEntity" type="my.sunghyuk.lifemusic.entity.RecordEntity"/>
 		<typeAlias alias="CategoryEntity" type="my.sunghyuk.lifemusic.entity.CategoryEntity"/>
 		<typeAlias alias="CategoryType" type="my.sunghyuk.lifemusic.entity.CategoryType"/>
 	</typeAliases>
 	<mappers>
-		<mapper resource="my/sunghyuk/lifemusic/entity/mapper/AlbumMapper.xml" />
+		<mapper resource="my/sunghyuk/lifemusic/entity/mapper/RecordMapper.xml" />
 		<mapper resource="my/sunghyuk/lifemusic/entity/mapper/CategoryMapper.xml" />
 	</mappers>
 </configuration>

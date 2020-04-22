@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class AlbumRepositoryTests {
+public class RecordRepositoryTests {
 
 	@Test
 	public void get_by_id_test() {
