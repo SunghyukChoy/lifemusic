@@ -732,7 +732,7 @@ insert into categories (`type` , name , parent_id ) values ('GENRE', 'Rock', nul
     insert into categories (`type`, name, parent_id) values ('GENRE', 'Jangle pop', 16);
     insert into categories (`type`, name, parent_id) values ('GENRE', 'K-pop', 16);
     insert into categories (`type`, name, parent_id) values ('GENRE', 'Korean rock', 16);
-    insert into categories (`type`, name, parent_id) values ('GENRE', 'T'ong guitar', 16);
+    insert into categories (`type`, name, parent_id) values ('GENRE', 'T''ong guitar', 16);
     insert into categories (`type`, name, parent_id) values ('GENRE', 'Trot', 16);
     insert into categories (`type`, name, parent_id) values ('GENRE', 'Swamp pop', 16);
     insert into categories (`type`, name, parent_id) values ('GENRE', 'Mexican pop', 16);

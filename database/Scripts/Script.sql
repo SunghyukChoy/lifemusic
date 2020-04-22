@@ -1,3 +1,3 @@
 select * from menus;
 
-select * from genres where parent_id = 1;
+select * from genres where parent_id = 1; d
