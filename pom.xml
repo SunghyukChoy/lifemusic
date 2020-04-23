@@ -192,6 +192,12 @@
       <version>${hibernate-version}</version>
     </dependency>
 
+    <!-- Libraries -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.12</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>${finalName}</finalName>

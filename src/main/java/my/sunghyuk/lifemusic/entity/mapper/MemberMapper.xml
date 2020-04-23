@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.sunghyuk.lifemusic.entity.mapper.MemberMapper">
+	<resultMap id="MemberResult" type="MemberEntity">
+		<id property="id" column="id" />
+		
+	</resultMap>
+	<select id="findAll" resultMap="MemberResult">
+		SELECT * FROM members
+	</select>
+	<select id="getOneByUserId" parameterType="String" resultMap="MemberResult">
+		SELECT * FROM members WHERE user_id = #{ userId }
+	</select>
+</mapper>
