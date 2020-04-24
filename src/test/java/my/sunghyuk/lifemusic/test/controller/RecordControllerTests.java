@@ -26,7 +26,7 @@ import my.sunghyuk.lifemusic.service.RecordService;
 
 @RunWith(value = MockitoJUnitRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = {"classpath:spring-context/servlet-context.xml"})
+@ContextConfiguration(locations = {"classpath:springContext/servlet-context.xml"})
 public class RecordControllerTests {
 
     @Mock

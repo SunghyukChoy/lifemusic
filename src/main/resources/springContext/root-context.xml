@@ -11,7 +11,13 @@
   <context:component-scan base-package="my.sunghyuk.lifemusic.service" />
   
 	<context:property-placeholder location="classpath:environment.properties" />
-	
+
+  <!-- <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+  
+  <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+    <property name="objectMapper" ref="objectMapper" />
+  </bean> -->
+
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="${dataSource.driverClassName}" />
 		<property name="url" value="${dataSource.url}" />
@@ -30,8 +36,8 @@
 	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
-	</bean>
-	
+  </bean>
+
 	<!-- MyBatis Mappers -->
 	<bean id="recordMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="my.sunghyuk.lifemusic.entity.mapper.RecordMapper" />
@@ -40,6 +46,11 @@
 	
 	<bean id="categoryMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="my.sunghyuk.lifemusic.entity.mapper.CategoryMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  </bean>
+  
+  <bean id="memberMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="my.sunghyuk.lifemusic.entity.mapper.MemberMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 

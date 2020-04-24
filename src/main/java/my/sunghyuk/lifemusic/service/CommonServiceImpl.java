@@ -3,6 +3,7 @@ package my.sunghyuk.lifemusic.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import my.sunghyuk.lifemusic.domain.Genre;
@@ -16,6 +17,7 @@ public class CommonServiceImpl implements CommonService {
 
     private final CategoryRepository categoryRepository;
     
+    @Autowired
     public CommonServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
@@ -23,7 +25,8 @@ public class CommonServiceImpl implements CommonService {
 	@Override
 	public List<Genre> getGenres(String keywords) {
 		List<CategoryEntity> entities = categoryRepository.getCategories(CategoryType.GENRE, keywords);
-		List<Genre> genres = new ArrayList<>();
+        List<Genre> genres = new ArrayList<>();
+        
 		for (CategoryEntity entity : entities) {
 			genres.add(entity.buildGenre());
 		}

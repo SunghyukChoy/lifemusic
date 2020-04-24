@@ -1,33 +1,17 @@
 package my.sunghyuk.lifemusic.domain;
 
+import java.util.List;
+
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
 public class Menu {
 	
 	private long id;
-	private String name;
-	private Menu parent;
+    private String name;
+    private String url;
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Menu getParent() {
-		return parent;
-	}
-
-	public void setParent(Menu parent) {
-		this.parent = parent;
-	}
-
+	private List<Menu> childs;
 }

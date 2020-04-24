@@ -14,12 +14,12 @@ import my.sunghyuk.lifemusic.entity.mapper.CategoryMapper;
 public class CategoryRepositoryMyBatis implements CategoryRepository {
 
 	@Autowired
-	private CategoryMapper mapper;
+	private CategoryMapper categoryMapper;
 	
 	@Override
 	public List<CategoryEntity> getCategories(CategoryType categoryType, String keywords) {
 		keywords = keywords == null ? "" : keywords;
-		return mapper.findCategories(new CategorySearch(categoryType, keywords));
+		return categoryMapper.findCategories(new CategorySearch(categoryType, keywords));
 	}
 
 }

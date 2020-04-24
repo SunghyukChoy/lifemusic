@@ -10,21 +10,25 @@ import my.sunghyuk.lifemusic.domain.Record;
 import my.sunghyuk.lifemusic.entity.RecordEntity;
 import my.sunghyuk.lifemusic.repository.RecordRepository;
 
-@Service("recordService")
+@Service
 public class RecordServiceImpl implements RecordService {
 
-	@Autowired
-	private RecordRepository repository;
+    private final RecordRepository recordRepository;
+    
+    @Autowired
+    public RecordServiceImpl(RecordRepository recordRepository) {
+        this.recordRepository = recordRepository;
+    }
 	
 	@Override
 	public Record getRecordById(long id) {
-		RecordEntity entity = repository.findOne(id);
-		return entity != null ? repository.findOne(id).buildDomain() : null;
+		RecordEntity entity = recordRepository.findOne(id);
+		return entity != null ? recordRepository.findOne(id).buildDomain() : null;
 	}
 
 	@Override
 	public List<Record> getAllRecords() {
-		List<RecordEntity> entities = repository.findAll();
+		List<RecordEntity> entities = recordRepository.findAll();
 		List<Record> records = new ArrayList<Record>();
 		
 		for (RecordEntity entity : entities) {

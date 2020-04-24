@@ -1,65 +1,32 @@
 package my.sunghyuk.lifemusic.entity;
 
+import lombok.Getter;
+import lombok.val;
 import my.sunghyuk.lifemusic.domain.Category;
 import my.sunghyuk.lifemusic.domain.Genre;
 import my.sunghyuk.lifemusic.domain.Menu;
 
+@Getter
 public class CategoryEntity {
 	private long id;
-	private CategoryEntity parent;
 	private CategoryType categoryType;
-	private String name;
+    private String name;
+    private String value;
+    private int orderSequence;
 	private String description;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public CategoryEntity getParent() {
-		return parent;
-	}
-
-	public void setParent(CategoryEntity parent) {
-		this.parent = parent;
-	}
-
-	public CategoryType getCategoryType() {
-		return categoryType;
-	}
-
-	public void setCategoryType(CategoryType categoryType) {
-		this.categoryType = categoryType;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	private CategoryEntity parent;
 	
 	public Category buildDomain() {
-		Category category = new Category();
-		category.setId(id);
-		category.setName(name);
-		category.setCategoryType(categoryType);
-		category.setDescription(description);
-		
-		if (parent != null)
-			category.setParent(parent.buildDomain());
+        Category category = Category.builder()
+            .id(id)
+            .name(name)
+            .categoryType(categoryType)
+            .orderSequence(orderSequence)
+            .description(description).build();
+        
+            // TODO: parent logic
+		// if (parent != null)
+		// 	category.setParent(parent.buildDomain());
 		
 		return category;
 	}
@@ -68,7 +35,10 @@ public class CategoryEntity {
 		id = category.getId();
 		name = category.getName();
 		categoryType = category.getCategoryType();
-		description = category.getDescription();
+        description = category.getDescription();
+        value = category.getValue();
+        orderSequence = category.getOrderSequence();
+
 		if (category.getParent() != null) {
 			parent = new CategoryEntity();
 			parent.buildEntity(category.getParent());
@@ -76,22 +46,27 @@ public class CategoryEntity {
 	}
 	
 	public Genre buildGenre() {
-		Genre genre = new Genre();
-		genre.setId(id);
-		genre.setName(name);
-		if (parent != null)
-			genre.setParent(parent.getParent().buildGenre());
+		Genre genre = Genre.builder()
+            .id(id)
+            .name(name)
+            .value(value)
+            .orderSequence(orderSequence)
+            .build();
+        
+            // TODO
+		// if (parent != null)
+		// 	genre.setParent(parent.getParent().buildGenre());
 		
 		return genre;
 	}
 	
 	public Menu buildMenu() {
-		Menu menu = new Menu();
-		menu.setId(id);
-		menu.setName(name);
-		if (parent != null)
-			menu.setParent(parent.getParent().buildMenu());
-		
+		Menu menu = Menu.builder()
+		    .id(id)
+            .name(name)
+            .url(value)
+            .build();
+
 		return menu;
 	}
 }
