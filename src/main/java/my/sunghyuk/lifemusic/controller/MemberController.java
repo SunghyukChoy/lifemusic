@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import my.sunghyuk.lifemusic.domain.Member;
+import my.sunghyuk.lifemusic.domain.LoginUser;
 import my.sunghyuk.lifemusic.model.LoginModel;
 import my.sunghyuk.lifemusic.service.MemberService;
 
@@ -31,7 +31,7 @@ public class MemberController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(LoginModel model) {
 	    
-	    Member member = memberService.login(model.id, model.password);
+	    LoginUser member = memberService.login(model.id, model.password);
 	    
 	    // TODO: manage session
 	    

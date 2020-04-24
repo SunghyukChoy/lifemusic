@@ -1,22 +1,21 @@
 package my.sunghyuk.lifemusic.service;
 
-import org.springframework.stereotype.Service;
-
+import my.sunghyuk.lifemusic.domain.LoginUser;
 import my.sunghyuk.lifemusic.domain.Member;
 
 //@Service("memberService")
 public class MemberServiceImpl implements MemberService {
 
 	@Override
-	public Member login(String id, String password) {
+	public LoginUser login(String id, String password) {
 		//return true;
 	    return null;
 	}
 
-	@Override
-	public boolean register() {
-		// TODO Auto-generated method stub
-		return true;
-	}
+    @Override
+    public String register(Member member) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }

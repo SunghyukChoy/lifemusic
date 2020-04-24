@@ -8,10 +8,8 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<context:component-scan base-package="my.sunghyuk.lifemusic.repository" />
-	<context:component-scan base-package="my.sunghyuk.lifemusic.service" />
+  <context:component-scan base-package="my.sunghyuk.lifemusic.service" />
   
-    <context:component-scan base-package="my.sunghyuk.lifemusic.dummy" />
-	
 	<context:property-placeholder location="classpath:environment.properties" />
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">

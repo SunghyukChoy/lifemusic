@@ -1,7 +1,5 @@
 package my.sunghyuk.lifemusic.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +18,13 @@ public class RecordController {
 	@Autowired
 	private RecordService service;
 
-	private static final Logger logger = LoggerFactory.getLogger(RecordController.class);
-
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public ModelAndView list(@RequestParam(value = "search-filter", required = false) String searchFilter,
+    @RequestMapping(value = "/album", method = RequestMethod.GET)
+	private ModelAndView getAlbumPage(@RequestParam(value = "search-filter", required = false) String searchFilter,
 			@RequestParam(required = false) String keywords) {
+		return list(searchFilter, keywords);
+	}
+
+	private ModelAndView list(String searchFilter, String keywords) {
 		ModelAndView mv = new ModelAndView();
 
 		mv.setViewName("record/list");
