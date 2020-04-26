@@ -10,41 +10,41 @@ import my.sunghyuk.lifemusic.domain.CategorySearch;
 import my.sunghyuk.lifemusic.domain.Genre;
 import my.sunghyuk.lifemusic.domain.Menu;
 import my.sunghyuk.lifemusic.entity.CategoryEntity;
-import my.sunghyuk.lifemusic.entity.CategoryType;
+import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 import my.sunghyuk.lifemusic.repository.CategoryRepository;
 
 @Service
 public class CommonServiceImpl implements CommonService {
 
     private final CategoryRepository categoryRepository;
-    
+
     @Autowired
     public CommonServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
-	
-	@Override
-	public List<Genre> getGenres(String keywords) {
-		List<CategoryEntity> entities = categoryRepository.findCategories(new CategorySearch(CategoryType.GENRE, keywords));
-        List<Genre> genres = new ArrayList<>();
-        
-		for (CategoryEntity entity : entities) {
-			genres.add(entity.buildGenre());
-		}
-		
-		return genres;
-	}
 
-	@Override
-	public List<Menu> getMenus() {
-		List<CategoryEntity> entities = categoryRepository.findCategories(new CategorySearch(CategoryType.MENU, null));
-		ArrayList<Menu> menus = new ArrayList<>();
-		
-		for (CategoryEntity entity : entities) {
-			menus.add(entity.buildMenu());
-		}
-		
-		return menus;
-	}
+    @Override
+    public List<Genre> getGenres(String keywords) {
+        List<CategoryEntity> entities = categoryRepository.findCategories(CategoryType.GENRE, keywords);
+        List<Genre> genres = new ArrayList<>();
+
+        for (CategoryEntity entity : entities) {
+            genres.add(entity.buildGenre());
+        }
+
+        return genres;
+    }
+
+    @Override
+    public List<Menu> getMenus() {
+        List<CategoryEntity> entities = categoryRepository.findCategories(CategoryType.MENU, null);
+        ArrayList<Menu> menus = new ArrayList<>();
+
+        for (CategoryEntity entity : entities) {
+            menus.add(entity.buildMenu());
+        }
+
+        return menus;
+    }
 
 }

@@ -4,6 +4,7 @@ import lombok.Getter;
 import my.sunghyuk.lifemusic.domain.Category;
 import my.sunghyuk.lifemusic.domain.Genre;
 import my.sunghyuk.lifemusic.domain.Menu;
+import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 
 @Getter
 public class CategoryEntity {

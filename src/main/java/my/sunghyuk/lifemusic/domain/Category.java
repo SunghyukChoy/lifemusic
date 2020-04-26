@@ -2,7 +2,7 @@ package my.sunghyuk.lifemusic.domain;
 
 import lombok.Builder;
 import lombok.Getter;
-import my.sunghyuk.lifemusic.entity.CategoryType;
+import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 
 @Getter
 @Builder

@@ -5,9 +5,9 @@
     <typeAlias alias="RecordEntity" type="my.sunghyuk.lifemusic.entity.RecordEntity" />
     <typeAlias alias="CategoryEntity" type="my.sunghyuk.lifemusic.entity.CategoryEntity" />
     <typeAlias alias="MemberEntity" type="my.sunghyuk.lifemusic.entity.MemberEntity" />
-    <typeAlias alias="CategoryType" type="my.sunghyuk.lifemusic.entity.CategoryType" />
   </typeAliases>
   <typeHandlers>
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.CategoryType" />
     <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.MemberStatus" />
     <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.DataStatus" />
   </typeHandlers>

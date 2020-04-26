@@ -3,14 +3,14 @@
 <mapper namespace="my.sunghyuk.lifemusic.repository.mapper.CategoryMapper">
 	<resultMap id="CategoryResult" type="CategoryEntity">
 		<id property="id" column="id" />
-		<result property="categoryType" column="category_type" javaType="CategoryType" />
+		<result property="categoryType" column="category_type" />
     <result property="name" column="name" />
     <result property="value" column="value" />
     <result property="orderSequence" column="order_sequence" />
     <result property="dataStatus" column="dataStatus" />
 		<result property="description" column="description" />
 	</resultMap>
-	<select id="findCategories" parameterType="my.sunghyuk.lifemusic.domain.CategorySearch" resultMap="CategoryResult">
+	<select id="findCategories" resultMap="CategoryResult">
 		SELECT * FROM categories WHERE category_type = #{categoryType} AND name LIKE CONCAT(#{keywords},'%') 
 	</select>
 	<select id="find" parameterType="long" resultMap="CategoryResult">

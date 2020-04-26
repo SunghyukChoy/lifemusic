@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import my.sunghyuk.lifemusic.domain.Record;
 
+// TODO: Change to LOMBOK
 public class RecordEntity {
 	
 	private long id;
