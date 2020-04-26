@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ attribute name="title" %>
+<%@ attribute name="showBreadcrumb" %>
 <%@ attribute name="head_area" fragment="true" %>
 <%@ attribute name="container_area" fragment="true" %>
 
@@ -123,16 +124,17 @@
     </div>
   </header>
   <main role="main" class="container">
-  	<!-- TODO: add if-else for Breadcrumb -->
-    <h2 class="font-italic font-weight-bold pl-md-3 text-uppercase">Time For Us</h2>
-    <nav class="nav-breadcrumb" aria-label="breadcrumb">
-      <ol class="breadcrumb bg-transparent">
-        <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Record</a></li>
-        <li class="breadcrumb-item active"><a href="/record/album.html">Album</a></li>
-        <li class="breadcrumb-item active"><a href="/record/detail.html">Time For Us</a></li>
-      </ol>
-    </nav>
+    <c:if test="${ showBreadcrumb }">
+      <h2 class="font-italic font-weight-bold pl-md-3 text-uppercase">Time For Us</h2>
+      <nav class="nav-breadcrumb" aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent">
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Record</a></li>
+          <li class="breadcrumb-item active"><a href="/record/album.html">Album</a></li>
+          <li class="breadcrumb-item active"><a href="/record/detail.html">Time For Us</a></li>
+        </ol>
+      </nav>
+    </c:if>
     <!-- START: 실제 영역 -->
     <jsp:invoke fragment="container_area"/>
     <!-- END: 실제 영역 -->
