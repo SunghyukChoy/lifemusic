@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import my.sunghyuk.lifemusic.domain.CategorySearch;
 import my.sunghyuk.lifemusic.domain.Genre;
 import my.sunghyuk.lifemusic.domain.Menu;
 import my.sunghyuk.lifemusic.entity.CategoryEntity;
@@ -24,7 +25,7 @@ public class CommonServiceImpl implements CommonService {
 	
 	@Override
 	public List<Genre> getGenres(String keywords) {
-		List<CategoryEntity> entities = categoryRepository.getCategories(CategoryType.GENRE, keywords);
+		List<CategoryEntity> entities = categoryRepository.findCategories(new CategorySearch(CategoryType.GENRE, keywords));
         List<Genre> genres = new ArrayList<>();
         
 		for (CategoryEntity entity : entities) {
@@ -36,7 +37,7 @@ public class CommonServiceImpl implements CommonService {
 
 	@Override
 	public List<Menu> getMenus() {
-		List<CategoryEntity> entities = categoryRepository.getCategories(CategoryType.MENU, null);
+		List<CategoryEntity> entities = categoryRepository.findCategories(new CategorySearch(CategoryType.MENU, null));
 		ArrayList<Menu> menus = new ArrayList<>();
 		
 		for (CategoryEntity entity : entities) {

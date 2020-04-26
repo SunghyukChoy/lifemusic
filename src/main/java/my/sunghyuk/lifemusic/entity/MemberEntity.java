@@ -3,6 +3,7 @@ package my.sunghyuk.lifemusic.entity;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
+import lombok.Setter;
 import my.sunghyuk.lifemusic.domain.Member;
 import my.sunghyuk.lifemusic.domain.enums.MemberStatus;
 

@@ -29,7 +29,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(LoginModel model) {
+	public String tryLogin(LoginModel model) {
 	    
 	    LoginUser member = memberService.login(model.id, model.password);
 	    

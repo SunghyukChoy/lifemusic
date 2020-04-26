@@ -1,7 +1,6 @@
 package my.sunghyuk.lifemusic.entity;
 
 import lombok.Getter;
-import lombok.val;
 import my.sunghyuk.lifemusic.domain.Category;
 import my.sunghyuk.lifemusic.domain.Genre;
 import my.sunghyuk.lifemusic.domain.Menu;

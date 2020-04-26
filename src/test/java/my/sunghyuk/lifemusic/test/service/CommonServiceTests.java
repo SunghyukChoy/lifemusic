@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import my.sunghyuk.lifemusic.domain.CategorySearch;
 import my.sunghyuk.lifemusic.domain.Menu;
 import my.sunghyuk.lifemusic.entity.CategoryEntity;
 import my.sunghyuk.lifemusic.entity.CategoryType;
@@ -35,7 +36,7 @@ public class CommonServiceTests {
             new CategoryEntity()
         };
         List<CategoryEntity> arr = Arrays.asList(arrMenus);
-        given(categoryRepository.getCategories(CategoryType.MENU, null)).willReturn(arr);
+        given(categoryRepository.findCategories(new CategorySearch(CategoryType.MENU, null))).willReturn(arr);
         commonService = new CommonServiceImpl(categoryRepository);
 
         // when

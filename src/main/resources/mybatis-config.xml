@@ -7,6 +7,10 @@
     <typeAlias alias="MemberEntity" type="my.sunghyuk.lifemusic.entity.MemberEntity" />
     <typeAlias alias="CategoryType" type="my.sunghyuk.lifemusic.entity.CategoryType" />
   </typeAliases>
+  <typeHandlers>
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.MemberStatus" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.DataStatus" />
+  </typeHandlers>
   <mappers>
     <mapper resource="mappers/RecordMapper.xml" />
     <mapper resource="mappers/CategoryMapper.xml" />

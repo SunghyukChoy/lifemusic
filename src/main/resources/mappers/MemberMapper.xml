@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="my.sunghyuk.lifemusic.entity.mapper.MemberMapper">
+<mapper namespace="my.sunghyuk.lifemusic.repository.mapper.MemberMapper">
 	<resultMap id="MemberResult" type="MemberEntity">
 		<id property="id" column="id" />
     <result property="userId" column="user_id" />
@@ -16,7 +16,10 @@
 	</resultMap>
 	<select id="findAll" resultMap="MemberResult">
 		SELECT * FROM members
-	</select>
+  </select>
+  <select id="findById" parameterType="long" resultMap="MemberResult">
+		SELECT * FROM members WHERE id = #{id}
+  </select>
 	<select id="getOneByUserId" parameterType="String" resultMap="MemberResult">
 		SELECT * FROM members WHERE user_id = #{ userId } and status = 'ACTIVE'
 	</select>

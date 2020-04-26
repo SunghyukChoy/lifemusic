@@ -22,8 +22,8 @@ public class RecordServiceImpl implements RecordService {
 	
 	@Override
 	public Record getRecordById(long id) {
-		RecordEntity entity = recordRepository.findOne(id);
-		return entity != null ? recordRepository.findOne(id).buildDomain() : null;
+		RecordEntity entity = recordRepository.findById(id);
+		return entity != null ? entity.buildDomain() : null;
 	}
 
 	@Override
