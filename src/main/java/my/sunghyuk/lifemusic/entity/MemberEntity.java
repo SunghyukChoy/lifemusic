@@ -16,7 +16,7 @@ public class MemberEntity {
     private String lastName;
     private MemberStatus status;
     private boolean isAdmin;
-    private MemberEntity createdBy;
+    private long createdBy;
     private LocalDateTime createdDateTime;
     private LocalDateTime updatedDateTime;
 

@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-         "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<typeAliases>
-		<typeAlias alias="RecordEntity" type="my.sunghyuk.lifemusic.entity.RecordEntity"/>
-    <typeAlias alias="CategoryEntity" type="my.sunghyuk.lifemusic.entity.CategoryEntity"/>
+  <typeAliases>
+    <typeAlias alias="RecordEntity" type="my.sunghyuk.lifemusic.entity.RecordEntity" />
+    <typeAlias alias="CategoryEntity" type="my.sunghyuk.lifemusic.entity.CategoryEntity" />
     <typeAlias alias="MemberEntity" type="my.sunghyuk.lifemusic.entity.MemberEntity" />
-		<typeAlias alias="CategoryType" type="my.sunghyuk.lifemusic.entity.CategoryType"/>
-	</typeAliases>
-	<mappers>
-		<mapper resource="my/sunghyuk/lifemusic/entity/mapper/RecordMapper.xml" />
-    <mapper resource="my/sunghyuk/lifemusic/entity/mapper/CategoryMapper.xml" />
-    <mapper resource="my/sunghyuk/lifemusic/entity/mapper/MemberMapper.xml" />
-	</mappers>
+    <typeAlias alias="CategoryType" type="my.sunghyuk.lifemusic.entity.CategoryType" />
+  </typeAliases>
+  <mappers>
+    <mapper resource="mappers/RecordMapper.xml" />
+    <mapper resource="mappers/CategoryMapper.xml" />
+    <mapper resource="mappers/MemberMapper.xml" />
+  </mappers>
 </configuration>
-	

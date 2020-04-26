@@ -12,7 +12,7 @@ import my.sunghyuk.lifemusic.domain.Genre;
 import my.sunghyuk.lifemusic.domain.Menu;
 import my.sunghyuk.lifemusic.service.CommonService;
 
-//@RestController
+@RestController
 public class CommonController {
 	
 	@Autowired

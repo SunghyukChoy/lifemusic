@@ -4,9 +4,9 @@
 		<Console name="console" target="SYSTEM_OUT">
 			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
 		</Console>
-		<File name="file" fileName="c:/logs/lifemusic-log.txt">
+		<!-- <File name="file" fileName="c:/logs/lifemusic-log.txt">
 			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
-		</File>
+		</File> -->
 	</Appenders>
 	<Loggers>
 		<Logger name="my.sunghyuk.lifemusic" level="debug" />
