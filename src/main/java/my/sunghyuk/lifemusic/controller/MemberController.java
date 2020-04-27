@@ -1,5 +1,7 @@
 package my.sunghyuk.lifemusic.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,16 +30,27 @@ public class MemberController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String tryLogin(LoginModel model) {
-	    
-	    LoginUser member = memberService.login(model.id, model.password);
-	    
-	    // TODO: manage session
-	    
-        return "redirect:" + (model.redirectUrl.isEmpty() ? "/" : model.redirectUrl);
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView tryLogin(@RequestParam LoginModel model, HttpSession session) {
+	    ModelAndView mv = new ModelAndView();
+        LoginUser member = memberService.login(model.id, model.password);
+
+        mv.setViewName(member == null ? "member/login" : "redirect:" + (model.redirectUrl.isEmpty() ? "/" : model.redirectUrl));
+
+        return mv;
     }
-	
+    
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView logout() {
+        return new ModelAndView("member/logout");
+    }
+
+    @RequestMapping(value = "/accessdenied", method = RequestMethod.GET)
+    public ModelAndView error() {
+        ModelAndView mv = new ModelAndView("member/denied");
+        mv.addObject("errorMessage", "로그인이 실패하였습니다.");
+        return mv;
+    }
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register() {
