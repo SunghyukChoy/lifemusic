@@ -25,6 +25,6 @@ public class CommonController {
 	
     @RequestMapping(value = "/menus", method = RequestMethod.GET)
 	public @ResponseBody List<Menu> menus() {
-		return commonService.getMenus();
+		return commonService.getTopMenus();
 	}
 }

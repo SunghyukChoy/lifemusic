@@ -12,4 +12,6 @@ public interface CategoryRepository {
     List<CategoryEntity> findCategories(CategoryType categoryType, String keywords);
 
     List<CategoryEntity> findByParentId(long parentId);
+
+    List<CategoryEntity> findTopMenus();
 }

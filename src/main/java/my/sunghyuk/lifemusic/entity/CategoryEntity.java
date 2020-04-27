@@ -44,7 +44,7 @@ public class CategoryEntity {
 
     public Genre buildGenre() {
         Genre genre = Genre.builder().id(id).name(name).value(value).orderSequence(orderSequence)
-                //.childGenre(childCategories != null ? childCategories.stream().map(g -> g.buildGenre()).collect(Collectors.toList()) : null)
+                .childGenre(childCategories != null ? childCategories.stream().map(g -> g.buildGenre()).collect(Collectors.toList()) : null)
                 .build();
 
         return genre;
@@ -52,7 +52,7 @@ public class CategoryEntity {
 
     public Menu buildMenu() {
         Menu menu = Menu.builder().id(id).name(name).url(value)
-                // .childMenus(childCategories != null ? childCategories.stream().map(g -> g.buildMenu()).collect(Collectors.toList()) : null)
+                .childMenus(childCategories != null ? childCategories.stream().map(g -> g.buildMenu()).collect(Collectors.toList()) : null)
                 .build();
 
         return menu;

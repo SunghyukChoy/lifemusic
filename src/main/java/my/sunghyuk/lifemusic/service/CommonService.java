@@ -8,6 +8,6 @@ import my.sunghyuk.lifemusic.domain.Menu;
 public interface CommonService {
 
 	List<Genre> getGenres(String keywords);
-	List<Menu> getMenus();
+	List<Menu> getTopMenus();
 	
 }

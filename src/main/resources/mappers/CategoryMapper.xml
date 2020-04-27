@@ -9,8 +9,11 @@
     <result property="orderSequence" column="order_sequence" />
     <result property="dataStatus" column="dataStatus" />
     <result property="description" column="description" />
-    <collection property="childCategories" column="parent_id" select="my.sunghyuk.lifemusic.repository.mapper.CategoryMapper.findByParentId" />
+    <collection property="childCategories" column="id" select="my.sunghyuk.lifemusic.repository.mapper.CategoryMapper.findByParentId" />
   </resultMap>
+  <select id="findTopMenus" resultMap="CategoryResult">
+		SELECT * FROM categories WHERE category_type = 'MENU' AND parent_id is null
+  </select>
   <select id="findCategories" resultMap="CategoryResult">
 		SELECT * FROM categories WHERE category_type = #{categoryType} AND name LIKE CONCAT(#{keywords},'%') 
   </select>

@@ -39,7 +39,7 @@ public class CommonServiceTests {
         commonService = new CommonServiceImpl(categoryRepository);
 
         // when
-        final List<Menu> menus = commonService.getMenus();
+        final List<Menu> menus = commonService.getTopMenus();
 
         // then
         assertEquals(3, menus.size());

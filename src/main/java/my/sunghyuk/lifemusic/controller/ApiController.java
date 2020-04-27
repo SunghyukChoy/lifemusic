@@ -42,11 +42,11 @@ public class ApiController {
 
     @RequestMapping(value = "/menu")
     public List<Menu> getMenus() {
-        return commonService.getMenus();
+        return commonService.getTopMenus();
     }
 
     @RequestMapping(value = "/genres")
-    public List<Genre> getGenres() {
-        return commonService.getGenres("");
+    public List<Genre> getGenres(@RequestParam(required = false) String keywords) {
+        return commonService.getGenres(keywords);
     }
 }

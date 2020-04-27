@@ -2,6 +2,7 @@ package my.sunghyuk.lifemusic.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,15 +36,8 @@ public class CommonServiceImpl implements CommonService {
     }
 
     @Override
-    public List<Menu> getMenus() {
-        List<CategoryEntity> entities = categoryRepository.findCategories(CategoryType.MENU, "");
-        ArrayList<Menu> menus = new ArrayList<>();
-
-        for (CategoryEntity entity : entities) {
-            menus.add(entity.buildMenu());
-        }
-
-        return menus;
+    public List<Menu> getTopMenus() {
+        return categoryRepository.findTopMenus().stream().map(ent -> ent.buildMenu()).collect(Collectors.toList());
     }
 
 }
