@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="my.sunghyuk.lifemusic.repository.mapper.CategoryMapper">
-	<resultMap id="CategoryResult" type="CategoryEntity">
-		<id property="id" column="id" />
-		<result property="categoryType" column="category_type" />
+  <resultMap id="CategoryResult" type="CategoryEntity">
+    <id property="id" column="id" />
+    <result property="categoryType" column="category_type" />
     <result property="name" column="name" />
     <result property="value" column="value" />
     <result property="orderSequence" column="order_sequence" />
     <result property="dataStatus" column="dataStatus" />
-		<result property="description" column="description" />
-	</resultMap>
-	<select id="findCategories" resultMap="CategoryResult">
+    <result property="description" column="description" />
+    <collection property="childCategories" column="parent_id" select="my.sunghyuk.lifemusic.repository.mapper.CategoryMapper.findByParentId" />
+  </resultMap>
+  <select id="findCategories" resultMap="CategoryResult">
 		SELECT * FROM categories WHERE category_type = #{categoryType} AND name LIKE CONCAT(#{keywords},'%') 
-	</select>
-	<select id="find" parameterType="long" resultMap="CategoryResult">
+  </select>
+  <select id="findById" parameterType="long" resultMap="CategoryResult">
 		SELECT * FROM categories WHERE id = #{id}
-	</select>
+  </select>
+  <select id="findByParentId" parameterType="long" resultMap="CategoryResult">
+		SELECT * FROM categories WHERE parent_id = #{parentId}
+  </select>
 </mapper>

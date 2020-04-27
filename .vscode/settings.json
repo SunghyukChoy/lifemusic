@@ -3,6 +3,7 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.tabSize": 4
   },
+  "files.associations": {"*.jsp": "xml"},
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,

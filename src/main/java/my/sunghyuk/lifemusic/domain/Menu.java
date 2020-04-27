@@ -13,5 +13,5 @@ public class Menu {
     private String name;
     private String url;
 
-	private List<Menu> childs;
+	private List<Menu> childMenus;
 }

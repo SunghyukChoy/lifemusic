@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import my.sunghyuk.lifemusic.domain.Genre;
+import my.sunghyuk.lifemusic.domain.Menu;
 import my.sunghyuk.lifemusic.entity.CategoryEntity;
 import my.sunghyuk.lifemusic.entity.MemberEntity;
 import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 import my.sunghyuk.lifemusic.repository.CategoryRepository;
 import my.sunghyuk.lifemusic.repository.MemberRepository;
+import my.sunghyuk.lifemusic.service.CommonService;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -24,6 +27,9 @@ public class ApiController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private CommonService commonService;
+
     @RequestMapping(value = "/member/{id}")
     public MemberEntity getMember(@PathVariable long id) {
         return memberRepository.findById(id);
@@ -34,4 +40,13 @@ public class ApiController {
         return categoryRepository.findCategories(categoryType, keywords);
     }
 
+    @RequestMapping(value = "/menu")
+    public List<Menu> getMenus() {
+        return commonService.getMenus();
+    }
+
+    @RequestMapping(value = "/genres")
+    public List<Genre> getGenres() {
+        return commonService.getGenres("");
+    }
 }

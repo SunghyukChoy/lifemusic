@@ -7,8 +7,9 @@ import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 
 public interface CategoryRepository {
 
-    CategoryEntity find(long id);
+    CategoryEntity findById(long id);
 
     List<CategoryEntity> findCategories(CategoryType categoryType, String keywords);
 
+    List<CategoryEntity> findByParentId(long parentId);
 }
