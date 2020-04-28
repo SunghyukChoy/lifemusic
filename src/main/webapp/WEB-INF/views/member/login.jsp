@@ -16,7 +16,7 @@
       <input type="text" id="inputId" class="form-control" placeholder="ID" required autofocus />
 <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required />
-<div class="checkbox mb-3">
+      <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me" /> Remember me
         </label>

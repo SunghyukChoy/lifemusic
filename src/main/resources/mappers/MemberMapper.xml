@@ -9,7 +9,7 @@
     <result property="middleName" column="middle_name" />
     <result property="lastName" column="last_name" />
     <result property="status" column="status" />
-    <result property="isAdmin" column="is_admin" />
+    <result property="role" column="role" />
     <result property="createdBy" column="created_by" />
     <result property="createdDateTime" column="created_datetime" />
     <result property="updatedDateTime" column="updated_datetime" />

@@ -10,6 +10,7 @@
     <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.CategoryType" />
     <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.MemberStatus" />
     <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.DataStatus" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.Role" />
   </typeHandlers>
   <mappers>
     <mapper resource="mappers/RecordMapper.xml" />

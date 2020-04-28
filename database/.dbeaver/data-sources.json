@@ -7,7 +7,6 @@
 			"name": "MySQL - localhost",
 			"save-password": true,
 			"read-only": false,
-			"virtual-model-id": "mysql5-171364191fe-1c323a770b6e7aa7",
 			"configuration": {
 				"host": "localhost",
 				"port": "32769",
@@ -21,8 +20,7 @@
 					"allowPublicKeyRetrieval": "true",
 					"useSSL": "false"
 				},
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
 			},
 			"filters": [
 				{

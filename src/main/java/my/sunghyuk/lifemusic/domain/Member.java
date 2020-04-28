@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Getter;
 import my.sunghyuk.lifemusic.domain.enums.MemberStatus;
+import my.sunghyuk.lifemusic.entity.enums.Role;
 
 @Getter
 public class Member {
@@ -16,12 +17,13 @@ public class Member {
     private String middleName;
     private String lastName;
     private MemberStatus status;
+    private Role role;
     private LocalDateTime createdDateTime;
     private LocalDateTime updatedDateTime;
 
     @Builder
     public Member(long id, String userId, String password, String firstName, String middleName, 
-            String lastName, MemberStatus status) {
+            String lastName, MemberStatus status, Role role) {
         this.id = id;
         this.userId = userId;
         this.password = password;
@@ -29,5 +31,6 @@ public class Member {
         this.middleName = middleName;
         this.lastName = lastName;
         this.status = status;
+        this.role = role;
     }
 }
