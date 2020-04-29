@@ -8,8 +8,8 @@ import lombok.Getter;
 @Getter
 @Builder
 public class Genre {
-	private long id;
-	private List<Genre> childGenre;
+    private long id;
+    private List<Genre> childGenre;
     private String name;
     private String value;
     private int orderSequence;

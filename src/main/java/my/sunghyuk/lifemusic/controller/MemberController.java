@@ -18,7 +18,7 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login2", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam(value = "redirect-url", required = false) String redirectUrl) {
         ModelAndView mv = new ModelAndView("member/login");
         mv.addObject("loginModel", LoginModel.builder().redirectUrl(redirectUrl).build());
@@ -44,7 +44,7 @@ public class MemberController {
 
     @RequestMapping(value = "/error", method = RequestMethod.GET)
     public ModelAndView error() {
-        ModelAndView mv = new ModelAndView("member/denied");
+        ModelAndView mv = new ModelAndView("member/error");
         mv.addObject("errorMessage", "로그인이 실패하였습니다.");
         return mv;
     }

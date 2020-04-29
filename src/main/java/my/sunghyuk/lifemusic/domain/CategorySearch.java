@@ -7,6 +7,6 @@ import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 @Getter
 @AllArgsConstructor
 public class CategorySearch {
-	private CategoryType categoryType;
-	private String keywords;
+    private CategoryType categoryType;
+    private String keywords;
 }

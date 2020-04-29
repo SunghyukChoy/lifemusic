@@ -23,16 +23,8 @@ public class MemberEntity {
     private LocalDateTime updatedDateTime;
 
     public Member buildDomain() {
-        Member member = Member.builder()
-                              .id(id)
-                              .userId(userId)
-                              .password(password)
-                              .firstName(firstName)
-                              .middleName(middleName)
-                              .lastName(lastName)
-                              .status(status)
-                              .role(role)
-                              .build();
+        Member member = Member.builder().id(id).userId(userId).password(password).firstName(firstName)
+                .middleName(middleName).lastName(lastName).status(status).role(role).build();
         return member;
     }
 
@@ -47,15 +39,8 @@ public class MemberEntity {
         this.role = member.getRole();
     }
 
-	public LoginMember buildLoginMember() {
-        return LoginMember.builder()
-            .id(id)
-            .userId(userId)
-            .firstName(firstName)
-            .middleName(middleName)
-            .lastName(lastName)
-            .status(status)
-            .role(role)
-            .build();
-	}
+    public LoginMember buildLoginMember() {
+        return LoginMember.builder().id(id).userId(userId).firstName(firstName).middleName(middleName)
+                .lastName(lastName).status(status).role(role).build();
+    }
 }

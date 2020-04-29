@@ -68,12 +68,12 @@
     </style>
     <style>
     .container {
-    	max-with : 960px;
+      max-with : 960px;
     }
     
     .lh-condensed {
-    	line-height:1.25; 
-    	
+      line-height:1.25; 
+      
     }
     </style>
     <!-- Custom styles for this template -->

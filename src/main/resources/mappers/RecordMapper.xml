@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="my.sunghyuk.lifemusic.repository.mapper.RecordMapper">
-	<resultMap id="RecordResult" type="RecordEntity">
-		<id property="id" column="id" />
-		<result property="name" column="name" />
-		<result property="description" column="description" />
-		<result property="imgURL" column="img_url" />
-		<result property="artist" column="artist" />
-		<result property="releaseDate" column="release_date" />
-		<result property="writer" column="writer" />
-		<result property="likeCount" column="like_count" />
-		<result property="createdDateTime" column="created_datetime" />
-		<result property="views" column="views" />
-		<result property="rate" column="rate" />
-	</resultMap>
-	<select id="findAll" resultMap="RecordResult">
-		SELECT * FROM records
-	</select>
-	<select id="findById" parameterType="long" resultMap="RecordResult">
-		SELECT * FROM records WHERE id = #{ id }
-	</select>
+  <resultMap id="RecordResult" type="RecordEntity">
+    <id property="id" column="id" />
+    <result property="name" column="name" />
+    <result property="description" column="description" />
+    <result property="imgURL" column="img_url" />
+    <result property="artist" column="artist" />
+    <result property="releaseDate" column="release_date" />
+    <result property="writer" column="writer" />
+    <result property="likeCount" column="like_count" />
+    <result property="createdDateTime" column="created_datetime" />
+    <result property="views" column="views" />
+    <result property="rate" column="rate" />
+  </resultMap>
+  <select id="findAll" resultMap="RecordResult">
+    SELECT * FROM records
+  </select>
+  <select id="findById" parameterType="long" resultMap="RecordResult">
+    SELECT * FROM records WHERE id = #{ id }
+  </select>
 </mapper>

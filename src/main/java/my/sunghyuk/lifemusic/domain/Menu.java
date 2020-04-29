@@ -8,10 +8,10 @@ import lombok.Getter;
 @Getter
 @Builder
 public class Menu {
-	
-	private long id;
+
+    private long id;
     private String name;
     private String url;
 
-	private List<Menu> childMenus;
+    private List<Menu> childMenus;
 }

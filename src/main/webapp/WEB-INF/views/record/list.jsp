@@ -3,15 +3,15 @@
 <%@ taglib prefix="my" uri="http://lifemusic.com/tags"%>
 
 <my:base-template title="HOME">
-	<jsp:attribute name="head_area">
+  <jsp:attribute name="head_area">
   <script>
     $(function () {
       $('#genres').selectpicker();
     })
   </script>
-	</jsp:attribute>
-	<jsp:attribute name="container_area">
-	        
+  </jsp:attribute>
+  <jsp:attribute name="container_area">
+          
     <form class="board-filter">
       <fieldset>
         <div class="form-group row">
@@ -75,7 +75,7 @@
               <a href="/album/detail?id=${ album.id }">${ album.name }</a>
             </td>
             <td>
-            	<!-- TODO: Artist Link 수정 요망 -->
+              <!-- TODO: Artist Link 수정 요망 -->
               <a href="/artist/detail.html">${ album.artist }</a>
             </td>
             <td class="d-none d-md-table-cell">
@@ -91,7 +91,7 @@
               ${ album.views }
             </td>
             <td>
-            	${ album.likeCount }
+              ${ album.likeCount }
             </td>
           </tr>
         </c:forEach>
@@ -114,5 +114,5 @@
       </nav>
     </div>
   
-	</jsp:attribute>
+  </jsp:attribute>
 </my:base-template>

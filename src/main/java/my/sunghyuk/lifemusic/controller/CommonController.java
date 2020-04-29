@@ -14,17 +14,17 @@ import my.sunghyuk.lifemusic.service.CommonService;
 
 @RestController
 public class CommonController {
-	
-	@Autowired
-	private CommonService commonService;
-	
-	@RequestMapping(value = "/genres", method = RequestMethod.GET)
-	public @ResponseBody List<Genre> genres(String keywords) {
-		return commonService.getGenres(keywords);
-	}
-	
+
+    @Autowired
+    private CommonService commonService;
+
+    @RequestMapping(value = "/genres", method = RequestMethod.GET)
+    public @ResponseBody List<Genre> genres(String keywords) {
+        return commonService.getGenres(keywords);
+    }
+
     @RequestMapping(value = "/menus", method = RequestMethod.GET)
-	public @ResponseBody List<Menu> menus() {
-		return commonService.getTopMenus();
-	}
+    public @ResponseBody List<Menu> menus() {
+        return commonService.getTopMenus();
+    }
 }

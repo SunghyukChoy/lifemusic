@@ -3,10 +3,9 @@
 <%@ taglib prefix="my" uri="http://lifemusic.com/tags"%>
 
 <my:base-template title="HOME">
-	<jsp:attribute name="head_area">
-		
-	</jsp:attribute>
-	<jsp:attribute name="container_area">
+  <jsp:attribute name="head_area">
+  </jsp:attribute>
+  <jsp:attribute name="container_area">
     <div class="top">
       <div id="main-carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -16,13 +15,25 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: First slide"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: First slide">
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect>
+              <text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
           </div>
           <div class="carousel-item">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Second slide"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: Second slide">
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect>
+              <text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
           </div>
           <div class="carousel-item">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Third slide"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: Third slide">
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect>
+              <text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
           </div>
         </div>
         <a class="carousel-control-prev" href="#main-carousel" role="button" data-slide="prev">
@@ -64,8 +75,7 @@
               <a href="/record/detail.html" class="stretched-link">Show more..</a>
             </div>
             <div class="col-auto">
-              <img class="bd-placeholder-img" src="/images/sample/albumcover2.jpg"
-                alt="The 1975 - The 1975 (album)" />
+              <img class="bd-placeholder-img" src="/images/sample/albumcover2.jpg" alt="The 1975 - The 1975 (album)" />
             </div>
           </div>
         </div>
@@ -82,7 +92,8 @@
             <h2 class="review-post-title">
               <a href="#">The Greatest Albums</a>
             </h2>
-            <p class="review-post-meta">January 1, 2020 by <a href="#">Choi</a></p>
+            <p class="review-post-meta">January 1, 2020 by <a href="#">Choi</a>
+            </p>
 
             <div class="review-content-cut">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab at vero commodi explicabo similique ipsum
@@ -95,7 +106,8 @@
               </p>
               <a href="#">MORE..</a>
             </div>
-          </div><!-- /.review-post -->
+          </div>
+          <!-- /.review-post -->
 
           <div class="review-divider row">
             <div class="offset-3 col-3 divider-left"></div>
@@ -103,8 +115,11 @@
           </div>
 
           <div class="review-post">
-            <h2 class="review-post-title"><a href="#">90년대 얼터너티브 락의 진면목</a></h2>
-            <p class="review-post-meta">October 12, 2019 by <a href="#">Seon</a></p>
+            <h2 class="review-post-title">
+              <a href="#">90년대 얼터너티브 락의 진면목</a>
+            </h2>
+            <p class="review-post-meta">October 12, 2019 by <a href="#">Seon</a>
+            </p>
 
             <div class="review-content-cut">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab at vero commodi explicabo similique ipsum
@@ -117,7 +132,8 @@
               </p>
               <a href="#">MORE..</a>
             </div>
-          </div><!-- /.review-post -->
+          </div>
+          <!-- /.review-post -->
 
           <div class="review-divider row">
             <div class="offset-3 col-3 divider-left"></div>
@@ -125,8 +141,11 @@
           </div>
 
           <div class="review-post">
-            <h2 class="review-post-title"><a href="#">너의 생각을 뛰어넘는 상상 이상의 음악</a></h2>
-            <p class="review-post-meta">January 1, 2020 by <a href="#">Choi</a></p>
+            <h2 class="review-post-title">
+              <a href="#">너의 생각을 뛰어넘는 상상 이상의 음악</a>
+            </h2>
+            <p class="review-post-meta">January 1, 2020 by <a href="#">Choi</a>
+            </p>
 
             <div class="review-content-cut">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab at vero commodi explicabo similique ipsum
@@ -139,8 +158,10 @@
               </p>
               <a href="#">MORE..</a>
             </div>
-          </div><!-- /.review-post -->
-        </div><!-- /.review-main -->
+          </div>
+          <!-- /.review-post -->
+        </div>
+        <!-- /.review-main -->
 
         <aside class="col-md-4 blog-sidebar">
           <div class="p-4 mb-3 bg-light rounded">
@@ -174,10 +195,13 @@
                 <tr>
                   <th scope="row">2</th>
                   <td>
-                    <a href="#">
-                      <h4>Blinding Lights</h4>
-                      <h5>The Weeknd</h5>
-                    </a>
+                    
+                      <h4>
+                      <a href="#">Blinding Lights</a>
+                    </h4>
+                      <h5>
+                      <a href="#">The Weeknd</a>
+                    </h5>
                   </td>
                 </tr>
                 <tr>
@@ -269,10 +293,11 @@
               </tbody>
             </table>
           </div>
-        </aside><!-- /.blog-sidebar -->
+        </aside>
+        <!-- /.blog-sidebar -->
 
       </div>
     </div>
   
-	</jsp:attribute>
+  </jsp:attribute>
 </my:base-template>

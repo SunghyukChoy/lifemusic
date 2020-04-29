@@ -3,8 +3,8 @@
 <%@ taglib prefix="my" uri="http://lifemusic.com/tags"%>
 
 <my:base-template title="HOME">
-	<jsp:attribute name="head_area">
-		<script>
+  <jsp:attribute name="head_area">
+    <script>
     /* Active Show More / Close Button */
     const closeText = 'Close';
     const closeBs4ButtonClass = 'btn-secondary';
@@ -34,8 +34,8 @@
     }
 
   </script>
-	</jsp:attribute>
-	<jsp:attribute name="container_area">
+  </jsp:attribute>
+  <jsp:attribute name="container_area">
     <div id="record-info">
       <div class="record-info d-flex row">
         <div class="col-auto">
@@ -419,6 +419,6 @@
           </div><!-- /.review-main -->
         </div>
       </div>  
-	</div>
+  </div>
   </jsp:attribute>
 </my:base-template>

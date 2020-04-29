@@ -15,36 +15,36 @@ import my.sunghyuk.lifemusic.service.RecordService;
 @RequestMapping(value = "/record")
 public class RecordController {
 
-	@Autowired
-	private RecordService service;
+    @Autowired
+    private RecordService service;
 
     @RequestMapping(value = "/album", method = RequestMethod.GET)
-	private ModelAndView getAlbumPage(@RequestParam(value = "search-filter", required = false) String searchFilter,
-			@RequestParam(required = false) String keywords) {
-		return list(searchFilter, keywords);
-	}
+    private ModelAndView getAlbumPage(@RequestParam(value = "search-filter", required = false) String searchFilter,
+            @RequestParam(required = false) String keywords) {
+        return list(searchFilter, keywords);
+    }
 
-	private ModelAndView list(String searchFilter, String keywords) {
-		ModelAndView mv = new ModelAndView();
+    private ModelAndView list(String searchFilter, String keywords) {
+        ModelAndView mv = new ModelAndView();
 
-		mv.setViewName("record/list");
-		 mv.addObject("records", service.getAllRecords());
+        mv.setViewName("record/list");
+        mv.addObject("records", service.getAllRecords());
 
-		return mv;
-	}
+        return mv;
+    }
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public ModelAndView detail(@RequestParam(value = "id") long id) {
-		Record record = service.getRecordById(id);
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    public ModelAndView detail(@RequestParam(value = "id") long id) {
+        Record record = service.getRecordById(id);
 
-		if (record == null)
-			throw new ResourceNotFoundException();
+        if (record == null)
+            throw new ResourceNotFoundException();
 
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("record/detail");
-		mv.addObject("record", record);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("record/detail");
+        mv.addObject("record", record);
 
-		return mv;
-	}
+        return mv;
+    }
 
 }

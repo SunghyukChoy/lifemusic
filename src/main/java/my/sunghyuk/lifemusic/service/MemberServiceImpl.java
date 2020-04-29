@@ -17,11 +17,11 @@ public class MemberServiceImpl implements MemberService {
         this.memberRepository = memberRepository;
     }
 
-	@Override
-	public LoginMember login(String id, String password) {
-		//return true;
-	    return null;
-	}
+    @Override
+    public LoginMember login(String id, String password) {
+        // return true;
+        return null;
+    }
 
     @Override
     public String register(Member member) {
