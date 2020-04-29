@@ -29,7 +29,7 @@ public class RecordServiceImpl implements RecordService {
     @Override
     public List<Record> getAllRecords() {
         List<RecordEntity> entities = recordRepository.findAll();
-        List<Record> records = new ArrayList<Record>();
+        List<Record> records = new ArrayList<>();
 
         for (RecordEntity entity : entities) {
             records.add(entity.buildDomain());

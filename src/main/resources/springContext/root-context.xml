@@ -31,6 +31,8 @@
   <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     <property name="dataSource" ref="dataSource" />
   </bean>
+  
+  <tx:annotation-driven transaction-manager="txManager" />
 
   <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
     <constructor-arg index="0" ref="sqlSessionFactory" />
@@ -51,7 +53,5 @@
     <property name="mapperInterface" value="my.sunghyuk.lifemusic.repository.mapper.MemberMapper" />
     <property name="sqlSessionFactory" ref="sqlSessionFactory" />
   </bean>
-
-  <tx:annotation-driven transaction-manager="txManager" />
 
 </beans>

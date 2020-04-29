@@ -1,0 +1,9 @@
+*은 중요도
+[    *] Color IDE Pack - 왜깔린진 솔직히 잘 모르겠음
+[   **] Darkest Dark Theme with DevStyle - 이클립스 다크 테마
+[   **] Easy Console Grapper - 콘솔창에서 Color 를 자동으로 입혀주는 플러그인
+[    *] JBoss Tools - hibernate 연동에 도움이 되는 플러그인 (이외에 기능이 많은것으로 알지만 다 써보진 않음)
+[*****] More Clipboard - Clipboard History 기능 제공
+[  ***] MyBatipse, MyBatis Generator 1.0 - Mybatis Support 플러그인
+[ ****] SonarLint - 깔끔한 java 코드 작성에 도움이 되는 lint 제공
+[    *] Yaml Editor - Yaml Formatter 제공
