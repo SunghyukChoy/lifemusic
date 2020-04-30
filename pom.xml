@@ -7,13 +7,14 @@
   <packaging>war</packaging>
   <version>1.0.0-BUILD-SNAPSHOT</version>
   <properties>
-    <java-version>1.8</java-version>
+    <finalName>ROOT</finalName>
+    <encoding>UTF-8</encoding>
 
-    <org.springframework-version>4.1.1.RELEASE</org.springframework-version>
+    <java-version>1.8</java-version>
+    <org.springframework-version>4.1.6.RELEASE</org.springframework-version>
+    <org.springframework.security-version>4.0.0.RELEASE</org.springframework.security-version>
     <org.aspectj-version>1.6.10</org.aspectj-version>
     <hibernate-version>5.1.0.Final</hibernate-version>
-
-    <finalName>ROOT</finalName>
   </properties>
   <dependencies>
     <!-- Spring -->
@@ -95,27 +96,27 @@
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-core</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>${org.springframework.security-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-web</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>${org.springframework.security-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-config</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>${org.springframework.security-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-taglibs</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>${org.springframework.security-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-test</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>${org.springframework.security-version}</version>
     </dependency>
 
     <!-- Test -->

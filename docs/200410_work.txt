@@ -1,22 +1,22 @@
 2020.04.10 작업 내용
 1) 프론트 엔드 디자인 적용
-	- index.html에서 적용된 스타일시트, 라이브러리, 이미지 파일들 확인하여 작업공간으로 복사
-	- index.html, css, js, lib(bootstap, bootstrap-select, font-awesome, jquery, popper.js)
-	- servlet-context.xml에서 resource 태그 추가
+  - index.html에서 적용된 스타일시트, 라이브러리, 이미지 파일들 확인하여 작업공간으로 복사
+  - index.html, css, js, lib(bootstap, bootstrap-select, font-awesome, jquery, popper.js)
+  - servlet-context.xml에서 resource 태그 추가
 2) database connection 정보 수정
-	- environment.properties에서 db url 수정 (서버포트 번호, 서버타임), db password 수정
+  - environment.properties에서 db url 수정 (서버포트 번호, 서버타임), db password 수정
 3) Album 도메인, 엔티티에 createdDateTime 필드 추가
-	- lifemusic database - albums table에 created_datetime 추가
-	- domain/Album.java에 createdDateTime 필드 추가
-		-- getter/setter 생성, LocalDateTime 클래스 import
-	- entity/AlbumEntity java에 createdDateTime 필드 추가
-		-- getter/setter 생성, LocalDateTime 클래스 import
-		-- buildEntity() 메소드 수정
-		-- buildDomain() 메소드 수정(album 객체에 값 저장)
-	- entity/mapper/AlbumMapper.xml 수정
-		-- resultMap 태그 하위 요서 result 태그 추가 (property="엔티티명" column="디비 테이블의 필드명")
+  - lifemusic database - albums table에 created_datetime 추가
+  - domain/Album.java에 createdDateTime 필드 추가
+    -- getter/setter 생성, LocalDateTime 클래스 import
+  - entity/AlbumEntity java에 createdDateTime 필드 추가
+    -- getter/setter 생성, LocalDateTime 클래스 import
+    -- buildEntity() 메소드 수정
+    -- buildDomain() 메소드 수정(album 객체에 값 저장)
+  - entity/mapper/AlbumMapper.xml 수정
+    -- resultMap 태그 하위 요서 result 태그 추가 (property="엔티티명" column="디비 테이블의 필드명")
 4) album/list.jsp에서 앨범 목록 db에서 가져오도록 코드 수정
-	- 테이블 바디 부분 반복문으로 돌림.
+  - 테이블 바디 부분 반복문으로 돌림.
 5) Album 도메인, 엔티티에 likeCount 필드 추가( 3번 작업과 동일)
 6) 페이지마다 중복되는 부분(헤더, 푸터)은 base.tag로 정의하여 코드를 줄이고
    각 페이지에 따라 다른 부분은 jsp:attribute 태그를 이용하여 달리 정의함.

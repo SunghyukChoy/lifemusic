@@ -3,6 +3,10 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.tabSize": 4
   },
+  "[xml]": {
+    "editor.autoClosingBrackets": "never",
+    "editor.wordWrapColumn": 120
+  },
   "files.associations": {"*.jsp": "xml"},
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,

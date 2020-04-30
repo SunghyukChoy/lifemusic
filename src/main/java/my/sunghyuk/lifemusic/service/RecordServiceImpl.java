@@ -14,28 +14,28 @@ import my.sunghyuk.lifemusic.repository.RecordRepository;
 public class RecordServiceImpl implements RecordService {
 
     private final RecordRepository recordRepository;
-    
+
     @Autowired
     public RecordServiceImpl(RecordRepository recordRepository) {
         this.recordRepository = recordRepository;
     }
-	
-	@Override
-	public Record getRecordById(long id) {
-		RecordEntity entity = recordRepository.findById(id);
-		return entity != null ? entity.buildDomain() : null;
-	}
 
-	@Override
-	public List<Record> getAllRecords() {
-		List<RecordEntity> entities = recordRepository.findAll();
-		List<Record> records = new ArrayList<Record>();
-		
-		for (RecordEntity entity : entities) {
-			records.add(entity.buildDomain());
-		}
-		
-		return records;
-	}
-	
+    @Override
+    public Record getRecordById(long id) {
+        RecordEntity entity = recordRepository.findById(id);
+        return entity != null ? entity.buildDomain() : null;
+    }
+
+    @Override
+    public List<Record> getAllRecords() {
+        List<RecordEntity> entities = recordRepository.findAll();
+        List<Record> records = new ArrayList<>();
+
+        for (RecordEntity entity : entities) {
+            records.add(entity.buildDomain());
+        }
+
+        return records;
+    }
+
 }
