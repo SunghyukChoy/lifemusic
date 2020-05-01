@@ -9,9 +9,8 @@
 			"read-only": false,
 			"configuration": {
 				"host": "localhost",
-				"port": "32769",
-				"database": "lifemusic",
-				"url": "jdbc:mysql://localhost:32769/lifemusic",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
 				"home": "MySQL Binaries",
 				"type": "dev",
 				"properties": {
@@ -20,17 +19,13 @@
 					"allowPublicKeyRetrieval": "true",
 					"useSSL": "false"
 				},
-				"auth-model": "native"
+				"auth-model": "native",
+				"handlers": {}
 			},
-			"filters": [
-				{
-					"type": "org.jkiss.dbeaver.ext.mysql.model.MySQLCatalog",
-					"enabled": true,
-					"include": [
-						"lifemusic"
-					]
-				}
-			]
+			"filters": [],
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
+			}
 		}
 	},
 	"connection-types": {

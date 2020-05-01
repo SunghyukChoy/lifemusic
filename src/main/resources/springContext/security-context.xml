@@ -6,7 +6,7 @@
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security.xsd">
 
-  <http auto-config="true">
+  <!-- <http auto-config="true">
     <csrf />
     <intercept-url pattern="/**" access="permitAll" />
     <intercept-url pattern="/myinfo/**" access="hasRole('MEMBER')" />
@@ -24,6 +24,6 @@
 
   <b:bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
     <b:property name="authenticationManager" ref="authenticationManager" />
-  </b:bean>
+  </b:bean> -->
 
 </b:beans>

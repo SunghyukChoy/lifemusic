@@ -1,5 +1,6 @@
 package my.sunghyuk.lifemusic.domain;
 
+import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 
 import lombok.Builder;
@@ -9,7 +10,7 @@ import my.sunghyuk.lifemusic.entity.enums.Role;
 
 @Getter
 public class Member {
-    
+
     private long id;
     private String userId;
     private String password;
@@ -22,8 +23,10 @@ public class Member {
     private LocalDateTime updatedDateTime;
 
     @Builder
-    public Member(long id, String userId, String password, String firstName, String middleName, 
-            String lastName, MemberStatus status, Role role) {
+    @ConstructorProperties(value = { "id", "userId", "password", "firstName", "middleName", "lastName", "status",
+            "role" })
+    public Member(long id, String userId, String password, String firstName, String middleName, String lastName,
+            MemberStatus status, Role role) {
         this.id = id;
         this.userId = userId;
         this.password = password;

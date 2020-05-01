@@ -12,6 +12,8 @@ import my.sunghyuk.lifemusic.entity.enums.DataStatus;
 
 @Getter
 public class CategoryEntity {
+    // Value Object : CategoryVO
+    // Data Transfer Object : CategoryDTO
     private long id;
     private CategoryType categoryType;
     private String name;
