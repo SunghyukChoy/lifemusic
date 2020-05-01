@@ -29,7 +29,7 @@ public class RecordController {
         ModelAndView mv = new ModelAndView();
 
         mv.setViewName("record/list");
-        mv.addObject("records", recordService.getRecordsByFilters(keywords));
+        mv.addObject("records", recordService.getRecordsByFilters(searchFilter, keywords));
 
         return mv;
     }

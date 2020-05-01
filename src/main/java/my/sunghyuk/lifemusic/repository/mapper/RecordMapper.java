@@ -8,5 +8,6 @@ import my.sunghyuk.lifemusic.entity.RecordEntity;
 import my.sunghyuk.lifemusic.repository.RecordRepository;
 
 public interface RecordMapper extends RecordRepository {
-    List<RecordEntity> findBySearchFilterAndKeyword(@Param(value = "keywords") String keywords);
+    List<RecordEntity> findBySearchFilterAndKeyword(@Param(value = "searchFilter") String searchFilter,
+            @Param(value = "keywords") String keywords);
 }

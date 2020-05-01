@@ -10,6 +10,6 @@ public interface RecordService {
 
     List<Record> getAllRecords();
 
-    List<Record> getRecordsByFilters(String keywords);
+    List<Record> getRecordsByFilters(String searchFilter, String keywords);
 
 }

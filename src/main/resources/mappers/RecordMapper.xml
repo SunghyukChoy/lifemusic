@@ -34,7 +34,18 @@
       created_datetime,
       updated_datetime
     FROM records
-    where name LIKE CONCAT('%',#{keywords},'%')
+    where 1 = 1 
+    <if test="searchFilter eq 'Title'">
+      and name LIKE CONCAT('%',#{keywords},'%')
+    </if>
+    <if test="searchFilter eq 'Musician'">
+      /* TODO: enter logic */
+      and '' LIKE CONCAT('%',#{keywords},'%')
+    </if>
+    <if test="searchFilter eq 'Writer'">
+      /* TODO: enter logic */
+      and '' LIKE CONCAT('%',#{keywords},'%')
+    </if>
   </select>
   <select id="findById" parameterType="long" resultMap="RecordResult">
     SELECT * FROM records WHERE id = #{ id }

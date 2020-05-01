@@ -38,8 +38,8 @@ public class RecordServiceImpl implements RecordService {
         return records;
     }
 
-    public List<Record> getRecordsByFilters(String keywords) {
-        List<RecordEntity> entities = recordRepository.findBySearchFilterAndKeyword(keywords);
+    public List<Record> getRecordsByFilters(String searchFilter, String keywords) {
+        List<RecordEntity> entities = recordRepository.findBySearchFilterAndKeyword(searchFilter, keywords);
         List<Record> records = new ArrayList<>();
 
         for (RecordEntity entity : entities) {

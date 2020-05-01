@@ -8,7 +8,7 @@ public interface RecordRepository {
 
     List<RecordEntity> findAll();
 
-    List<RecordEntity> findBySearchFilterAndKeyword(String keywords);
+    List<RecordEntity> findBySearchFilterAndKeyword(String searchFilter, String keywords);
 
     RecordEntity findById(long id);
 
