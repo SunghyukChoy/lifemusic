@@ -28,9 +28,9 @@
             </select>
           </div>
           <div class="col-12 col-md-3 mb-2">
-            <select class="form-control">
+            <select name="search-filter" class="form-control">
               <option>Title</option>
-              <option>Artist</option>
+              <option>Musician</option>
               <option>Writer</option>
             </select>
           </div>
@@ -50,7 +50,7 @@
             <th>#</th>
             <th>Rate</th>
             <th>Title</th>
-            <th>Artist</th>
+            <th>Musician</th>
             <th class="d-none d-md-table-cell">Release</th>
             <th>Writer</th>
             <th class="d-none d-md-table-cell">Created</th>
@@ -59,9 +59,9 @@
           </tr>
         </thead>
         <tbody>
-        <c:forEach var="album" items="${ albums }">
+        <c:forEach var="record" items="${ records }">
           <tr>
-            <th class="text-center">${ album.id }</th>
+            <th class="text-center">${ record.id }</th>
             <td class="text-center">
             <!-- TODO: 평가(별) 로직 추가 필요 -->
              <!--  <i class="fa fa-star" aria-hidden="true"></i>
@@ -69,29 +69,29 @@
               <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star-o" aria-hidden="true"></i> -->
-              ${ album.rate }
+              <%-- ${ record.rate } --%>
             </td>
             <td>
-              <a href="/album/detail?id=${ album.id }">${ album.name }</a>
+              <a href="/album/detail?id=${ record.id }">${ record.name }</a>
             </td>
             <td>
-              <!-- TODO: Artist Link 수정 요망 -->
-              <a href="/artist/detail.html">${ album.artist }</a>
+              <!-- TODO: Musician Link 수정 요망 -->
+              <a href="/musician/detail.html"><%-- ${ record.musician } --%></a>
             </td>
             <td class="d-none d-md-table-cell">
-              ${ album.releaseDate }
+              ${ record.releaseDate }
             </td>
             <td>
               <a href="/reviews/user.html">${ album.writer }</a>
             </td>
             <td class="d-none d-md-table-cell">
-              ${ album.createdDateTime }
+              ${ record.createdDateTime }
             </td>
             <td>
-              ${ album.views }
+              <%-- ${ record.views } --%>
             </td>
             <td>
-              ${ album.likeCount }
+              ${ record.likeCount }
             </td>
           </tr>
         </c:forEach>

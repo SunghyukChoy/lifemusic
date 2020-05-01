@@ -5,17 +5,36 @@
     <id property="id" column="id" />
     <result property="name" column="name" />
     <result property="description" column="description" />
-    <result property="imgURL" column="img_url" />
-    <result property="artist" column="artist" />
     <result property="releaseDate" column="release_date" />
-    <result property="writer" column="writer" />
     <result property="likeCount" column="like_count" />
+    <result property="createdBy" column="created_by" />
     <result property="createdDateTime" column="created_datetime" />
-    <result property="views" column="views" />
-    <result property="rate" column="rate" />
+    <result property="updatedDateTime" column="updated_datetime" />
   </resultMap>
   <select id="findAll" resultMap="RecordResult">
-    SELECT * FROM records
+    SELECT
+      id,
+      name,
+      description,
+      release_date,
+      like_count,
+      created_by,
+      created_datetime,
+      updated_datetime
+    FROM records
+  </select>
+  <select id="findBySearchFilterAndKeyword" resultMap="RecordResult">
+    SELECT
+      id,
+      name,
+      description,
+      release_date,
+      like_count,
+      created_by,
+      created_datetime,
+      updated_datetime
+    FROM records
+    where name LIKE CONCAT('%',#{keywords},'%')
   </select>
   <select id="findById" parameterType="long" resultMap="RecordResult">
     SELECT * FROM records WHERE id = #{ id }

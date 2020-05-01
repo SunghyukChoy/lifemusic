@@ -16,11 +16,12 @@ import my.sunghyuk.lifemusic.service.RecordService;
 public class RecordController {
 
     @Autowired
-    private RecordService service;
+    private RecordService recordService;
 
     @RequestMapping(value = "/album", method = RequestMethod.GET)
-    private ModelAndView getAlbumPage(@RequestParam(value = "search-filter", required = false) String searchFilter,
-            @RequestParam(required = false) String keywords) {
+    private ModelAndView getAlbumPage(
+            @RequestParam(value = "search-filter", required = false, defaultValue = "") String searchFilter,
+            @RequestParam(required = false, defaultValue = "") String keywords) {
         return list(searchFilter, keywords);
     }
 
@@ -28,14 +29,14 @@ public class RecordController {
         ModelAndView mv = new ModelAndView();
 
         mv.setViewName("record/list");
-        mv.addObject("records", service.getAllRecords());
+        mv.addObject("records", recordService.getRecordsByFilters(keywords));
 
         return mv;
     }
 
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public ModelAndView detail(@RequestParam(value = "id") long id) {
-        Record record = service.getRecordById(id);
+        Record record = recordService.getRecordById(id);
 
         if (record == null)
             throw new ResourceNotFoundException();

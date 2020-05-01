@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import my.sunghyuk.lifemusic.converter.TestComponent;
 import my.sunghyuk.lifemusic.domain.Genre;
 import my.sunghyuk.lifemusic.domain.Member;
 import my.sunghyuk.lifemusic.domain.Menu;
@@ -42,6 +43,9 @@ public class ApiController {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private TestComponent testComponent;
 
     @RequestMapping(value = "/member/{id}")
     public MemberEntity getMember(@PathVariable long id) {
@@ -78,5 +82,15 @@ public class ApiController {
         }
 
         return objectMapper.readValue(memberJson, Member.class);
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public int test() {
+        return testComponent.hashCode();
+    }
+
+    @RequestMapping(value = "/test2", method = RequestMethod.GET)
+    public int test2() {
+        return new TestComponent().hashCode();
     }
 }
