@@ -55,5 +55,10 @@
     <property name="mapperInterface" value="my.sunghyuk.lifemusic.repository.mapper.MemberMapper" />
     <property name="sqlSessionFactory" ref="sqlSessionFactory" />
   </bean>
+  
+  <bean id="musicianMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <property name="mapperInterface" value="my.sunghyuk.lifemusic.repository.mapper.MusicianMapper" />
+    <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  </bean>
 
 </beans>

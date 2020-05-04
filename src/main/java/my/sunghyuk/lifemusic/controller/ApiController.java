@@ -19,9 +19,12 @@ import my.sunghyuk.lifemusic.domain.Member;
 import my.sunghyuk.lifemusic.domain.Menu;
 import my.sunghyuk.lifemusic.entity.CategoryEntity;
 import my.sunghyuk.lifemusic.entity.MemberEntity;
+import my.sunghyuk.lifemusic.entity.MusicianEntity;
 import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 import my.sunghyuk.lifemusic.repository.CategoryRepository;
 import my.sunghyuk.lifemusic.repository.MemberRepository;
+import my.sunghyuk.lifemusic.repository.MusicianRepository;
+import my.sunghyuk.lifemusic.repository.RecordRepository;
 import my.sunghyuk.lifemusic.service.CommonService;
 import my.sunghyuk.lifemusic.service.LoginService;
 
@@ -36,6 +39,9 @@ public class ApiController {
     private CategoryRepository categoryRepository;
 
     @Autowired
+    private MusicianRepository musicianRepository;
+
+    @Autowired
     private CommonService commonService;
 
     @Autowired
@@ -46,6 +52,8 @@ public class ApiController {
 
     @Autowired
     private TestComponent testComponent;
+
+    private RecordRepository recordRepository;
 
     @RequestMapping(value = "/member/{id}")
     public MemberEntity getMember(@PathVariable long id) {
@@ -92,5 +100,10 @@ public class ApiController {
     @RequestMapping(value = "/test2", method = RequestMethod.GET)
     public int test2() {
         return new TestComponent().hashCode();
+    }
+
+    @RequestMapping(value = "/musician/{musicianId}", method = RequestMethod.GET)
+    public MusicianEntity getMusician(@PathVariable long musicianId) {
+        return musicianRepository.findById(musicianId);
     }
 }

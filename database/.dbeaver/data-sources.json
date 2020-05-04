@@ -11,7 +11,7 @@
 				"host": "localhost",
 				"port": "3306",
 				"url": "jdbc:mysql://localhost:3306/",
-				"home": "MySQL Binaries",
+				"home": "mysql_client",
 				"type": "dev",
 				"properties": {
 					"connectTimeout": "20000",
@@ -19,10 +19,27 @@
 					"allowPublicKeyRetrieval": "true",
 					"useSSL": "false"
 				},
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
 			},
-			"filters": [],
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
+			}
+		},
+		"h2_embedded-171d9111d1e-327188786483fe16": {
+			"provider": "generic",
+			"driver": "h2_embedded",
+			"name": "H2 Embedded - TRUE",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "D:\\workspaces\\java-web\\demo\\data\\lifemusic;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE",
+				"url": "jdbc:h2:D:\\workspaces\\java-web\\demo\\data\\lifemusic;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE",
+				"type": "dev",
+				"handlers": {},
+				"bootstrap": {
+					"defaultSchema": "PUBLIC"
+				}
+			},
 			"custom-properties": {
 				"database.meta.separate.connection": "false"
 			}

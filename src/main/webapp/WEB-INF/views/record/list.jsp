@@ -72,17 +72,17 @@
               <%-- ${ record.rate } --%>
             </td>
             <td>
-              <a href="/album/detail?id=${ record.id }">${ record.name }</a>
+              <a href="/record/detail?id=${ record.id }">${ record.name }</a>
             </td>
             <td>
               <!-- TODO: Musician Link 수정 요망 -->
-              <a href="/musician/detail.html"><%-- ${ record.musician } --%></a>
+              <a href="/musician/detail.html">${ record.musician.name }</a>
             </td>
             <td class="d-none d-md-table-cell">
               ${ record.releaseDate }
             </td>
             <td>
-              <a href="/reviews/user.html">${ album.writer }</a>
+              <a href="/reviews/user.html">${ record.writer }</a>
             </td>
             <td class="d-none d-md-table-cell">
               ${ record.createdDateTime }

@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 public class SongEntity {
     private long id;
-    private String name;
+    private String title;
     private LocalTime runningTime;
     private MusicianEntity composer;
     private MusicianEntity lyricist;
