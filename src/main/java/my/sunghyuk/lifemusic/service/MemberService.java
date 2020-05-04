@@ -5,12 +5,12 @@ import my.sunghyuk.lifemusic.domain.Member;
 
 public interface MemberService {
 
-    LoginMember login(String id, String password);
-
     LoginMember findLoginMemberByMemberId(String memberId);
 
     String register(Member member);
 
     Member findByMemberId(String memberId);
+
+    Member findById(long id);
 
 }

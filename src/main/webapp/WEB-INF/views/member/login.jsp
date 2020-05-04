@@ -13,14 +13,15 @@
       <img class="mb-4" src="/images/favicon/android-icon-72x72.png" alt="" width="72" height="72" />
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputId" class="sr-only">ID</label>
-      <input type="text" id="inputId" class="form-control" placeholder="ID" required autofocus />
+      <form:input path="memberId" cssClass="form-control" />
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required />
+      <form:password path="password" cssClass="form-control" />
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
+      <form:hidden path="redirectUrl" />
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form:form>

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import my.sunghyuk.lifemusic.common.exception.ResourceNotFoundException;
 import my.sunghyuk.lifemusic.domain.Record;
+import my.sunghyuk.lifemusic.exception.ResourceNotFoundException;
 import my.sunghyuk.lifemusic.service.RecordService;
 
 @Controller

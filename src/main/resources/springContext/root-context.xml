@@ -12,8 +12,6 @@
 
   <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
   
-  <bean id="testComponent" class="my.sunghyuk.lifemusic.converter.TestComponent" />
-
   <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
     <property name="objectMapper" ref="objectMapper" />
   </bean>

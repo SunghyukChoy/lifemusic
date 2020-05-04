@@ -8,12 +8,18 @@
     <typeAlias alias="MusicianEntity" type="my.sunghyuk.lifemusic.entity.MusicianEntity" />
   </typeAliases>
   <typeHandlers>
-    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.CategoryType" />
-    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.MemberStatus" />
-    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.DataStatus" />
-    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.Role" />
-    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.RecordType" />
-    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="my.sunghyuk.lifemusic.entity.enums.MusicianType" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler"
+      javaType="my.sunghyuk.lifemusic.entity.enums.CategoryType" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler"
+      javaType="my.sunghyuk.lifemusic.entity.enums.MemberStatus" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler"
+      javaType="my.sunghyuk.lifemusic.entity.enums.DataStatus" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler"
+      javaType="my.sunghyuk.lifemusic.entity.enums.MemberRole" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler"
+      javaType="my.sunghyuk.lifemusic.entity.enums.RecordType" />
+    <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler"
+      javaType="my.sunghyuk.lifemusic.entity.enums.MusicianType" />
   </typeHandlers>
   <mappers>
     <mapper resource="mappers/RecordMapper.xml" />
