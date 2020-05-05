@@ -75,22 +75,18 @@
       </div>
       <div class="user-buttons text-uppercase"></div>
       <sec:authorize access="isAuthenticated()">
-        <p>
+        <div>
           안녕하세요 <a href="/myinfo"> <sec:authentication property="details.userId" />
-          </a> 님
-          |
-          <a href="#" onclick="document.getElementById('logout').submit();">
-            로그아웃
-          </a>
+          </a> 님 | <a href="#" onclick="document.getElementById('logout').submit();"> 로그아웃 </a>
           <form id="logout" action="/member/logout" method="post">
-            <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
+            <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}" />
           </form>
-        </p>
+        </div>
       </sec:authorize>
       <sec:authorize access="!isAuthenticated()">
-        <p>
+        <div>
           <a href="/member/login">로그인</a> | <a href="/member/register">회원가입</a>
-        </p>
+        </div>
       </sec:authorize>
     </div>
     <!-- if not mobile, add class 'show' -->

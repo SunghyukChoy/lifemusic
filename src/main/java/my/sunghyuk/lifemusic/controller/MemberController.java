@@ -15,6 +15,8 @@ import my.sunghyuk.lifemusic.service.MemberService;
 @Controller
 public class MemberController {
 
+    public static final String REGISTER_VIEW = "member/register";
+
     @Autowired
     private MemberService memberService;
 
@@ -33,9 +35,10 @@ public class MemberController {
         return mv;
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register() {
-        return "member/register";
+    @RequestMapping(value = "/member/register", method = RequestMethod.GET)
+    public ModelAndView register() {
+        ModelAndView mv = new ModelAndView(REGISTER_VIEW);
+        return mv;
     }
 
     @RequestMapping(value = "/myinfo", method = RequestMethod.GET)

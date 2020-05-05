@@ -18,6 +18,8 @@ public class CommonServiceImpl implements CommonService {
 
     private final CategoryRepository categoryRepository;
 
+    private List<Menu> menus;
+
     @Autowired
     public CommonServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
@@ -37,7 +39,12 @@ public class CommonServiceImpl implements CommonService {
 
     @Override
     public List<Menu> getTopMenus() {
-        return categoryRepository.findTopMenus().stream().map(ent -> ent.buildMenu()).collect(Collectors.toList());
+        if (menus == null) {
+            this.menus = categoryRepository.findTopMenus().stream().map(ent -> ent.buildMenu())
+                    .collect(Collectors.toList());
+        }
+
+        return menus;
     }
 
 }
