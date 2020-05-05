@@ -9,14 +9,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 import my.sunghyuk.lifemusic.domain.Record;
 import my.sunghyuk.lifemusic.exception.ResourceNotFoundException;
+import my.sunghyuk.lifemusic.service.CommonService;
 import my.sunghyuk.lifemusic.service.RecordService;
 
 @Controller
 @RequestMapping(value = "/record")
-public class RecordController {
+public class RecordController extends BaseController {
 
+    private final RecordService recordService;
+    
     @Autowired
-    private RecordService recordService;
+    public RecordController(CommonService commonService, RecordService recordService) {
+        super(commonService);
+        this.recordService = recordService;
+    }
 
     @RequestMapping(value = "/album", method = RequestMethod.GET)
     private ModelAndView getAlbumPage(
@@ -26,11 +32,8 @@ public class RecordController {
     }
 
     private ModelAndView list(String searchFilter, String keywords) {
-        ModelAndView mv = new ModelAndView();
-
-        mv.setViewName("record/list");
+        ModelAndView mv = createBasicModelAndView("record/list");
         mv.addObject("records", recordService.getRecordsByFilters(searchFilter, keywords));
-
         return mv;
     }
 

@@ -9,16 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 import my.sunghyuk.lifemusic.service.CommonService;
 
 @Controller
-public class HomeController {
+public class HomeController extends BaseController {
 
     @Autowired
-    private CommonService commonService;
+    public HomeController(CommonService commonService) {
+        super(commonService);
+    }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home() {
-        ModelAndView mv = new ModelAndView("index");
-        mv.addObject("menus", commonService.getTopMenus());
-        return mv;
+        return createBasicModelAndView("index");
     }
 
 }

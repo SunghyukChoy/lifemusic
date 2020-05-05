@@ -66,7 +66,8 @@
     <div class="row d-flex">
       <div class="col-2 navbar-light d-flex justify-content-center align-items-center d-md-none">
         <button id="mobile-menu-button" class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#menu-area" aria-controls="menu-area" aria-expanded="false" aria-label="Toggle navigation">
+          data-target="#menu-area" aria-controls="menu-area" aria-expanded="false" aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -93,33 +94,27 @@
     <div class="row justify-content-center collapse show" id="menu-area">
       <!-- desktop -->
       <ul class="nav justify-content-between w-50">
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="menu-item-record"
-          data-toggle="dropdown" data-display="static" aria-haspopup="true" href="#">Record</a>
-          <div class="dropdown-menu" aria-labelledby="menu-item-record">
-            <a class="dropdown-item" href="#">Single</a> <a class="dropdown-item" href="#">EP</a> <a
-              class="dropdown-item" href="/album/list">Album</a>
-          </div></li>
-        <li class="nav-item"><a class="nav-link" href="/artist/list.html">Artist</a></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="menu-item-genre"
-          data-toggle="dropdown" data-display="static" aria-haspopup="true" href="#">Genre</a>
-          <div class="dropdown-menu" aria-labelledby="menu-item-genre">
-            <a class="dropdown-item" href="/genre/pop.html">Pop</a> <a class="dropdown-item" href="#">Rock</a> <a
-              class="dropdown-item" href="#">Hiphop</a> <a class="dropdown-item" href="#">Electronic</a> <a
-              class="dropdown-item" href="#">Jazz</a> <a class="dropdown-item" href="#">Classic</a> <a
-              class="dropdown-item" href="#">Blues</a>
-          </div></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="menu-item-review"
-          data-toggle="dropdown" data-display="static" aria-haspopup="true" href="#">Reviews</a>
-          <div class="dropdown-menu" aria-labelledby="menu-item-review">
-            <a class="dropdown-item" href="/review/records.html">Record</a> <a class="dropdown-item" href="#">Artist</a>
-            <a class="dropdown-item" href="#">Song</a>
-          </div></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="menu-item-about"
-          data-toggle="dropdown" data-display="static" aria-haspopup="true" href="#">About</a>
-          <div class="dropdown-menu" aria-labelledby="menu-item-review">
-            <a class="dropdown-item" href="/about/me.html">Developer Info</a> <a class="dropdown-item"
-              href="/about/contact-us.html">Contact Us</a>
-          </div></li>
+        <c:forEach var="menu" items="${ menus }">
+          <c:choose>
+            <c:when test="${ not empty menu.childMenus }">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="menu-${ menu.id }" data-toggle="dropdown" data-display="static"
+                  aria-haspopup="true" href="${ menu.url }"
+                >${ menu.name }</a>
+                <div class="dropdown-menu" aria-labelledby="menu-${ menu.id }">
+                  <c:forEach var="child" items="${ menu.childMenus }">
+                    <a class="dropdown-item" href="${ child.url }">${ child.name }</a>
+                  </c:forEach>
+                </div>
+              </li>
+            </c:when>
+            <c:otherwise>
+              <li class="nav-item">
+                <a class="nav-link" href="${ menu.url }">${ menu.name }</a>
+              </li>
+            </c:otherwise>
+          </c:choose>
+        </c:forEach>
       </ul>
     </div>
   </header>
@@ -128,10 +123,18 @@
       <h2 class="font-italic font-weight-bold pl-md-3 text-uppercase">Time For Us</h2>
       <nav class="nav-breadcrumb" aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent">
-          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Record</a></li>
-          <li class="breadcrumb-item active"><a href="/record/album.html">Album</a></li>
-          <li class="breadcrumb-item active"><a href="/record/detail.html">Time For Us</a></li>
+          <li class="breadcrumb-item">
+            <a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#">Record</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a href="/record/album.html">Album</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a href="/record/detail.html">Time For Us</a>
+          </li>
         </ol>
       </nav>
     </c:if>
