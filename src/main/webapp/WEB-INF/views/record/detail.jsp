@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="my" uri="http://lifemusic.com/tags"%>
 
-<my:base-template title="HOME">
+<my:base-template title="Albums">
   <jsp:attribute name="head_area">
     <script>
     /* Active Show More / Close Button */

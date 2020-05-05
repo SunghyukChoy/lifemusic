@@ -10,6 +10,7 @@ import my.sunghyuk.lifemusic.entity.enums.CategoryType;
 @Builder
 public class Category {
     private long id;
+    private Category parent;
     private List<Category> childCategories;
     private CategoryType categoryType;
     private String name;

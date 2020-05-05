@@ -35,13 +35,26 @@
 				"database": "D:\\workspaces\\java-web\\demo\\data\\lifemusic;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE",
 				"url": "jdbc:h2:D:\\workspaces\\java-web\\demo\\data\\lifemusic;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE",
 				"type": "dev",
-				"handlers": {},
 				"bootstrap": {
 					"defaultSchema": "PUBLIC"
 				}
 			},
 			"custom-properties": {
 				"database.meta.separate.connection": "false"
+			}
+		}
+	},
+	"virtual-models": {
+		"mysql5-17188913f13-3d3c472639689533": {
+			"lifemusic": {
+				":menus": {
+					"constraints": {
+						"VIRTUAL_PK": {
+							"type": "vpk",
+							"useAllColumns": true
+						}
+					}
+				}
 			}
 		}
 	},

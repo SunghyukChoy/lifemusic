@@ -1,13 +1,17 @@
-<%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag language="java" pageEncoding="UTF-8" import="my.sunghyuk.lifemusic.common.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sp" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
-<%@ attribute name="title"%>
-<%@ attribute name="showBreadcrumb"%>
+<%@ attribute name="title" required="true"%>
+<%@ attribute name="useBreadcrumb" %>
 <%@ attribute name="head_area" fragment="true"%>
 <%@ attribute name="container_area" fragment="true"%>
+
+<c:if test="${ empty useBreadcrumb }">
+  <c:set var="useBreadcrumb" value="true" />
+</c:if>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -66,8 +70,7 @@
     <div class="row d-flex">
       <div class="col-2 navbar-light d-flex justify-content-center align-items-center d-md-none">
         <button id="mobile-menu-button" class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#menu-area" aria-controls="menu-area" aria-expanded="false" aria-label="Toggle navigation"
-        >
+          data-target="#menu-area" aria-controls="menu-area" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -96,13 +99,12 @@
       <ul class="nav justify-content-between w-50">
         <c:forEach var="menu" items="${ menus }">
           <c:choose>
-            <c:when test="${ not empty menu.childMenus }">
+            <c:when test="${ not empty menu.childs }">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="menu-${ menu.id }" data-toggle="dropdown" data-display="static"
-                  aria-haspopup="true" href="${ menu.url }"
-                >${ menu.name }</a>
+                  aria-haspopup="true" href="${ menu.url }">${ menu.name }</a>
                 <div class="dropdown-menu" aria-labelledby="menu-${ menu.id }">
-                  <c:forEach var="child" items="${ menu.childMenus }">
+                  <c:forEach var="child" items="${ menu.childs }">
                     <a class="dropdown-item" href="${ child.url }">${ child.name }</a>
                   </c:forEach>
                 </div>
@@ -119,22 +121,18 @@
     </div>
   </header>
   <main role="main" class="container">
-    <c:if test="${ showBreadcrumb }">
-      <h2 class="font-italic font-weight-bold pl-md-3 text-uppercase">Time For Us</h2>
+    <c:if test="${ useBreadcrumb }">
+      <h2 class="font-italic font-weight-bold pl-md-3 text-uppercase">${ breadcrumb.title }</h2>
       <nav class="nav-breadcrumb" aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent">
           <li class="breadcrumb-item">
             <a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
           </li>
-          <li class="breadcrumb-item">
-            <a href="#">Record</a>
-          </li>
-          <li class="breadcrumb-item active">
-            <a href="/record/album.html">Album</a>
-          </li>
-          <li class="breadcrumb-item active">
-            <a href="/record/detail.html">Time For Us</a>
-          </li>
+          <c:forEach var="item" items="${ breadcrumb.items }">
+            <li class="breadcrumb-item">
+              <a href="${ item.url }">${ item.name }</a>
+            </li>
+          </c:forEach>
         </ol>
       </nav>
     </c:if>
