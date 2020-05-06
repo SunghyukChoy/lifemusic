@@ -1,43 +1,41 @@
 package my.sunghyuk.lifemusic.common;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import my.sunghyuk.lifemusic.domain.LoginMember;
-import my.sunghyuk.lifemusic.service.CustomUserDetailService;
+import my.sunghyuk.lifemusic.domain.Member;
+import my.sunghyuk.lifemusic.entity.enums.MemberRole;
+import my.sunghyuk.lifemusic.service.MemberService;
 
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
-    CustomUserDetailService customUserDetailService;
+    private MemberService memberService;
 
     @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        UsernamePasswordAuthenticationToken authToken = (UsernamePasswordAuthenticationToken) authentication;
-        
-        LoginMember loginMember = (LoginMember) customUserDetailService.loadUserByUsername(authToken.getName());
+    public Authentication authenticate(Authentication authentication) {
+        String memberId = authentication.getName();
+        Member member = memberService.findByMemberId(memberId);
 
-        if (loginMember == null) {
-            throw new UsernameNotFoundException(authToken.getName());
+        if (member == null) {
+            throw new UsernameNotFoundException(memberId);
         }
 
-        if (loginMember.getPassword() != authToken.getCredentials()) {
+        if (!member.getPassword().equals(authentication.getCredentials())) {
             throw new BadCredentialsException("not matching password");
         }
 
-        List<GrantedAuthority> authorities = (List<GrantedAuthority>)loginMember.getAuthorities();
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+                member.getId(), member.getPassword(), MemberRole.getAuthorities());
+        authenticationToken.setDetails(member.buildLoginMember());
 
-        return new UsernamePasswordAuthenticationToken(loginMember, null, authorities);
+        return authenticationToken;
     }
 
     @Override

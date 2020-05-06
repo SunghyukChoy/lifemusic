@@ -4,6 +4,7 @@ import java.util.List;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Builder
@@ -13,5 +14,8 @@ public class Menu {
     private String name;
     private String url;
 
-    private List<Menu> childMenus;
+    private Menu parent;
+
+    @Setter
+    private List<Menu> childs;
 }

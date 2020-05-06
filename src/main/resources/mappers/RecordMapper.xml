@@ -3,21 +3,68 @@
 <mapper namespace="my.sunghyuk.lifemusic.repository.mapper.RecordMapper">
   <resultMap id="RecordResult" type="RecordEntity">
     <id property="id" column="id" />
-    <result property="name" column="name" />
+    <result property="title" column="title" />
     <result property="description" column="description" />
-    <result property="imgURL" column="img_url" />
-    <result property="artist" column="artist" />
     <result property="releaseDate" column="release_date" />
-    <result property="writer" column="writer" />
+    <result property="recordType" column="record_type" />
     <result property="likeCount" column="like_count" />
+    <result property="createdBy" column="created_by" />
     <result property="createdDateTime" column="created_datetime" />
-    <result property="views" column="views" />
-    <result property="rate" column="rate" />
+    <result property="updatedDateTime" column="updated_datetime" />
+    <association property="musician" column="musician_id" select="my.sunghyuk.lifemusic.repository.mapper.MusicianMapper.findById"></association>
   </resultMap>
   <select id="findAll" resultMap="RecordResult">
-    SELECT * FROM records
+    SELECT
+      id,
+      title,
+      description,
+      release_date,
+      record_type,
+      like_count,
+      created_by,
+      created_datetime,
+      updated_datetime,
+      musician_id
+    FROM records
+  </select>
+  <select id="findBySearchFilterAndKeyword" resultMap="RecordResult">
+    SELECT
+      id,
+      title,
+      description,
+      release_date,
+      record_type,
+      like_count,
+      created_by,
+      created_datetime,
+      updated_datetime,
+      musician_id
+    FROM records
+    where 1 = 1 
+    <if test="searchFilter eq 'Title'">
+      and name LIKE CONCAT('%',#{keywords},'%')
+    </if>
+    <if test="searchFilter eq 'Musician'">
+      /* TODO: enter logic */
+      and '' LIKE CONCAT('%',#{keywords},'%')
+    </if>
+    <if test="searchFilter eq 'Writer'">
+      /* TODO: enter logic */
+      and '' LIKE CONCAT('%',#{keywords},'%')
+    </if>
   </select>
   <select id="findById" parameterType="long" resultMap="RecordResult">
-    SELECT * FROM records WHERE id = #{ id }
+    SELECT
+      id,
+      title,
+      description,
+      release_date,
+      record_type,
+      like_count,
+      created_by,
+      created_datetime,
+      updated_datetime,
+      musician_id 
+    FROM records WHERE id = #{ id }
   </select>
 </mapper>

@@ -18,6 +18,10 @@ public class CommonServiceImpl implements CommonService {
 
     private final CategoryRepository categoryRepository;
 
+    private List<Menu> allMenus;
+
+    private List<Menu> topMenus;
+
     @Autowired
     public CommonServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
@@ -36,8 +40,27 @@ public class CommonServiceImpl implements CommonService {
     }
 
     @Override
+    public List<Menu> getAllMenus() {
+        if (allMenus == null) {
+            List<CategoryEntity> entities = categoryRepository.findCategories(CategoryType.MENU, "");
+            this.allMenus = entities.stream().map(ent -> ent.buildMenu()).collect(Collectors.toList());
+
+            this.allMenus.stream().forEach(menu -> {
+                menu.setChilds(entities.stream()
+                        .filter(ent -> ent.getParent() != null && ent.getParent().getId() == menu.getId())
+                        .map(ent -> ent.buildMenu()).collect(Collectors.toList()));
+            });
+        }
+        return allMenus;
+    }
+
+    @Override
     public List<Menu> getTopMenus() {
-        return categoryRepository.findTopMenus().stream().map(ent -> ent.buildMenu()).collect(Collectors.toList());
+        if (topMenus == null) {
+            topMenus = getAllMenus().stream().filter(m -> m.getParent() == null).collect(Collectors.toList());
+        }
+
+        return topMenus;
     }
 
 }

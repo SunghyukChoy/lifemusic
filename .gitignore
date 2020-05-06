@@ -284,4 +284,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+database/.dbeaver
+
 # End of https://www.gitignore.io/api/java,linux,macos,maven,windows,dbeaver,eclipse,java-web,intellij,visualstudiocode

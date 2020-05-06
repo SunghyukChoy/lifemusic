@@ -11,7 +11,7 @@
   <context:property-placeholder location="classpath:environment.properties" />
 
   <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
-
+  
   <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
     <property name="objectMapper" ref="objectMapper" />
   </bean>
@@ -51,6 +51,11 @@
 
   <bean id="memberMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
     <property name="mapperInterface" value="my.sunghyuk.lifemusic.repository.mapper.MemberMapper" />
+    <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  </bean>
+  
+  <bean id="musicianMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <property name="mapperInterface" value="my.sunghyuk.lifemusic.repository.mapper.MusicianMapper" />
     <property name="sqlSessionFactory" ref="sqlSessionFactory" />
   </bean>
 

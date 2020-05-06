@@ -13,5 +13,4 @@ public interface CategoryRepository {
 
     List<CategoryEntity> findByParentId(long parentId);
 
-    List<CategoryEntity> findTopMenus();
 }

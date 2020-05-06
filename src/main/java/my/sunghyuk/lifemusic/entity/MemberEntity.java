@@ -6,7 +6,7 @@ import lombok.Getter;
 import my.sunghyuk.lifemusic.domain.LoginMember;
 import my.sunghyuk.lifemusic.domain.Member;
 import my.sunghyuk.lifemusic.domain.enums.MemberStatus;
-import my.sunghyuk.lifemusic.entity.enums.Role;
+import my.sunghyuk.lifemusic.entity.enums.MemberRole;
 
 @Getter
 public class MemberEntity {
@@ -17,7 +17,7 @@ public class MemberEntity {
     private String middleName;
     private String lastName;
     private MemberStatus status;
-    private Role role;
+    private MemberRole role;
     private long createdBy;
     private LocalDateTime createdDateTime;
     private LocalDateTime updatedDateTime;

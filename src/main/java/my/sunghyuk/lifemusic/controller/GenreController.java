@@ -9,16 +9,17 @@ import org.springframework.web.servlet.ModelAndView;
 import my.sunghyuk.lifemusic.service.CommonService;
 
 @Controller
-public class HomeController extends BaseController {
+@RequestMapping(value = "/genre")
+public class GenreController extends BaseController {
 
     @Autowired
-    public HomeController(CommonService commonService) {
+    public GenreController(CommonService commonService) {
         super(commonService);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView home() {
-        return createBasicModelAndView("index");
+    @RequestMapping(value = "/{genreName}", method = RequestMethod.GET)
+    public ModelAndView genres(String genreName) {
+        return createBasicModelAndView("record/list");
     }
 
 }

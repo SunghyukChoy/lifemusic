@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.sunghyuk.lifemusic.repository.mapper.MusicianMapper">
+  <resultMap id="MusicianResult" type="MusicianEntity">
+    <id property="id" column="id" />
+    <result property="name" column="name" />
+    <result property="musicianType" column="musician_type" />
+    <result property="debutYear" column="debut_year" />
+    <result property="createdBy" column="created_by" />
+    <result property="createdDateTime" column="created_datetime" />
+    <result property="updatedDateTime" column="updated_datetime" />
+  </resultMap>
+  <select id="findById" parameterType="long" resultMap="MusicianResult">
+    SELECT
+      id,
+      name,
+      musician_type,
+      debut_year,
+      created_by,
+      created_datetime,
+      updated_datetime
+    FROM musicians 
+    WHERE id = #{ id };  
+  </select>
+</mapper>

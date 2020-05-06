@@ -8,6 +8,6 @@
   <jsp:attribute name="head_area">
   </jsp:attribute>
   <jsp:attribute name="container_area">
-    <p>${member.firstName} ${member.lastname}</p>
+    <p>${member.firstName} ${member.lastName}</p>
   </jsp:attribute>
 </my:base-template>

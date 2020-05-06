@@ -11,4 +11,6 @@ public interface CommonService {
 
     List<Menu> getTopMenus();
 
+    List<Menu> getAllMenus();
+
 }

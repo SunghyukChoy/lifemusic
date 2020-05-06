@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import my.sunghyuk.lifemusic.domain.LoginMember;
 import my.sunghyuk.lifemusic.domain.Member;
+import my.sunghyuk.lifemusic.entity.MemberEntity;
 import my.sunghyuk.lifemusic.repository.MemberRepository;
 
 @Service
@@ -18,12 +19,6 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public LoginMember login(String id, String password) {
-        // return true;
-        return null;
-    }
-
-    @Override
     public String register(Member member) {
         // TODO Auto-generated method stub
         return null;
@@ -31,12 +26,20 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public LoginMember findLoginMemberByMemberId(String memberId) {
-        return memberRepository.getOneByUserId(memberId).buildLoginMember();
+        MemberEntity entity = memberRepository.getOneByUserId(memberId);
+        return entity != null ? entity.buildLoginMember() : null;
     }
 
     @Override
     public Member findByMemberId(String memberId) {
-        return memberRepository.getOneByUserId(memberId).buildDomain();
+        MemberEntity entity = memberRepository.getOneByUserId(memberId);
+        return entity != null ? entity.buildDomain() : null;
+    }
+
+    @Override
+    public Member findById(long id) {
+        MemberEntity entity = memberRepository.findById(id);
+        return entity != null ? entity.buildDomain() : null;
     }
 
 }

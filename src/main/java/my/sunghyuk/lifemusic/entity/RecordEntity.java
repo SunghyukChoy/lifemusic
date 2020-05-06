@@ -3,55 +3,49 @@ package my.sunghyuk.lifemusic.entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import my.sunghyuk.lifemusic.domain.Record;
+import my.sunghyuk.lifemusic.entity.enums.RecordType;
 
 @Getter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RecordEntity {
 
-	private long id;
-	private String name;
-	private String description;
-	private String imgURL;
-	private String artist;
-	private LocalDate releaseDate;
-	private String writer;
-	private int likeCount;
-	private LocalDateTime createdDateTime;
-	private int views;
-	private double rate;
+    private long id;
+    private String title;
+    private String description;
+    private LocalDate releaseDate;
+    private RecordType recordType;
+    private int likeCount;
+//    private RecordCoverEntity cover;
+//    private List<RecordTrackEntity> tracks;
+    private long createdBy;
+    private LocalDateTime createdDateTime;
+    private LocalDateTime updatedDateTime;
 
-	public Record buildDomain() {
-		Record record = Record.builder()
-				.id(id)
-				.name(name)
-				.description(description)
-				.imgURL(imgURL)
-				.artist(artist)
-				.releaseDate(releaseDate)
-				.writer(writer)
-				.createdDateTime(createdDateTime)
-				.likeCount(likeCount) 
-				.views(views)         
-		        .rate(rate)           
-		        .build();
-						
-		return record;
-	}
+    private MusicianEntity musician;
 
-	public void buildEntity(Record record) {
-		this.id = record.getId();
-		this.name = record.getName();
-		this.description = record.getDescription();
-		this.imgURL = record.getImgURL();
-		this.artist = record.getArtist();
-		this.releaseDate = record.getReleaseDate();
-		this.writer = record.getWriter();
-		this.createdDateTime = record.getCreatedDateTime();
-		this.likeCount = record.getLikeCount();
-		this.views = record.getViews();
-		this.rate = record.getRate();
-	}
+    public Record buildDomain() {
+        return Record.builder().id(id).name(title).description(description).recordType(recordType)
+                .releaseDate(releaseDate).createdDateTime(createdDateTime).likeCount(likeCount)
+                .musician(musician.buildDomain()).build();
+    }
+
+    public void buildEntity(Record record) {
+        this.id = record.getId();
+        this.title = record.getName();
+        this.description = record.getDescription();
+        this.releaseDate = record.getReleaseDate();
+        this.recordType = record.getRecordType();
+        this.createdDateTime = record.getCreatedDateTime();
+        this.likeCount = record.getLikeCount();
+        MusicianEntity musicianEntity = MusicianEntity.builder().build();
+        musicianEntity.buildEntity(record.getMusician());
+        this.musician = musicianEntity;
+    }
 }
