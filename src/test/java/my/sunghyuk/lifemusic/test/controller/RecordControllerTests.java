@@ -47,7 +47,7 @@ public class RecordControllerTests {
     public void get_album_page_test() throws Exception {
         // given
         List<Record> albums = new ArrayList<Record>();
-        albums.add(new Record());
+        albums.add(Record.builder().build());
         given(recordService.getAllRecords()).willReturn(albums);
 
         // when

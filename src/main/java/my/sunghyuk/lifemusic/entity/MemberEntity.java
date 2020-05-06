@@ -23,9 +23,8 @@ public class MemberEntity {
     private LocalDateTime updatedDateTime;
 
     public Member buildDomain() {
-        Member member = Member.builder().id(id).userId(userId).password(password).firstName(firstName)
+        return Member.builder().id(id).userId(userId).password(password).firstName(firstName)
                 .middleName(middleName).lastName(lastName).status(status).role(role).build();
-        return member;
     }
 
     public void buildEntity(Member member) {
