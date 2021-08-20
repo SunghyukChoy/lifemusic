@@ -23,7 +23,7 @@ public abstract class BaseController {
         this.commonService = commonService;
     }
 
-    public ModelAndView createBasicModelAndView(String viewPath) {
+    protected ModelAndView createBasicModelAndView(String viewPath) {
 
         ModelAndView mv = new ModelAndView(viewPath);
 
